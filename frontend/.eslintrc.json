@@ -1,0 +1,11 @@
+{
+  "extends": ["react-app", "eslint:recommended"],
+  "rules": {
+    "semi": [2, "never"],
+    "object-shorthand": 2,
+    "prefer-destructuring": 2,
+    "no-duplicate-imports": [2, { "includeExports": true }],
+    "sort-imports": 1,
+    "no-console": 1
+  }
+}
