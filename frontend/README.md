@@ -1,3 +1,3 @@
-# Advanced-React
+# stick-fits
 
 frontend
