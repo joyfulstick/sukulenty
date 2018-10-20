@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const NavStyles = styled.ul`
   margin: 0;
@@ -22,7 +22,7 @@ const NavStyles = styled.ul`
       font-size: 10px;
       padding: 0 10px;
     }
-    &:before {
+    &::before {
       content: '';
       width: 2px;
       background: ${props => props.theme.lightgrey};
@@ -33,9 +33,9 @@ const NavStyles = styled.ul`
       top: 0;
       bottom: 0;
     }
-    &:after {
+    &::after {
       height: 2px;
-      background: red;
+      background: ${props => props.theme.green};
       content: '';
       width: 0;
       position: absolute;
@@ -59,6 +59,6 @@ const NavStyles = styled.ul`
     justify-content: center;
     font-size: 1.5rem;
   }
-`;
+`
 
-export default NavStyles;
+export default NavStyles
