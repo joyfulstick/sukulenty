@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default function(amount) {
   Intl = require('intl')
   require('intl/locale-data/jsonp/pl')
