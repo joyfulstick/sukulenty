@@ -4,7 +4,7 @@ import NavStyles from './styles/NavStyles'
 const links = {
   items: 'sklep',
   sell: 'sprzedaj',
-  signup: 'załóż konto',
+  signup: 'utwórz konto',
   orders: 'zamowienia',
   me: 'moje konto',
 }

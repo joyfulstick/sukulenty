@@ -11,6 +11,12 @@ const theme = {
   offWhite: '#ededed',
   maxWidth: '1000px',
   boxShadow: '0 12px 24px 0 rgba(0, 0, 0, .09)',
+  gradient: `linear-gradient(
+    to right,
+    #6ccd14 0%,
+    #79e317 50%,
+    #6ccd14 100%
+  )`,
 }
 
 const StyledPage = styled.div`
@@ -19,7 +25,7 @@ const StyledPage = styled.div`
 `
 const Inner = styled.div`
   max-width: ${props => props.theme.maxWidth};
-  margin: 0 auto;
+  margin: 264px auto 0 auto;
   padding: 2rem;
 `
 injectGlobal`

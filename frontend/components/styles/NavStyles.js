@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 
-const NavStyles = styled.ul`
+const NavStyles = styled.nav`
   margin: 0;
   padding: 0;
   display: flex;
   justify-self: end;
   font-size: 2rem;
+  white-space: nowrap;
   a,
   button {
     padding: 1rem 3rem;
