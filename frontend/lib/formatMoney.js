@@ -1,4 +1,6 @@
 export default function(amount) {
+  Intl = require('intl')
+  require('intl/locale-data/jsonp/pl')
   const options = {
     style: 'currency',
     currency: 'PLN',
