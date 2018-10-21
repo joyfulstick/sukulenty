@@ -1,6 +1,8 @@
+import Items from './items'
+
 const Home = () => (
   <div>
-    <p>Home</p>
+    <Items />
   </div>
 )
 

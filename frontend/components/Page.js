@@ -24,11 +24,11 @@ const Inner = styled.div`
 `
 injectGlobal`
 @font-face {
-  font-family: radnika_next;
-  src: url('/static/radnikanext-medium-webfont.woff2')
+  font-family: Raleway, sans-serif;
+  src: url('/static/raleway-v12-latin-regular.woff2')
   format('woff2');
-  font-weight: normal;
   font-style: normal;
+  font-weight: 400;
 }
 html {
   box-sizing: border-box;
@@ -42,7 +42,7 @@ body {
   padding: 0;
   font-size: 1.5rem;
   line-height: 2;
-  font-family: radnika_next;
+  font-family: Raleway, sans-serif;
 }
 a {
   text-decoration: none;

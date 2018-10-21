@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Item = styled.div`
   background: white;
   border: 1px solid ${props => props.theme.offWhite};
-  box-shadow: ${props => props.theme.bs};
+  box-shadow: ${props => props.theme.boxShadow};
   position: relative;
   display: flex;
   flex-direction: column;
@@ -21,11 +21,12 @@ const Item = styled.div`
     font-size: 1.5rem;
   }
   .buttonList {
-    display: grid;
     width: 100%;
-    border-top: 1px solid ${props => props.theme.lightgrey};
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-gap: 1px;
+    justify-content: space-between;
+    border-top: 1px solid ${props => props.theme.lightgrey};
     background: ${props => props.theme.lightgrey};
     & > * {
       background: white;
@@ -34,6 +35,6 @@ const Item = styled.div`
       padding: 1rem;
     }
   }
-`;
+`
 
-export default Item;
+export default Item

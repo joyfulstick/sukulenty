@@ -1,23 +1,21 @@
 import Link from 'next/link'
 import NavStyles from './styles/NavStyles'
 
+const links = {
+  items: 'sklep',
+  sell: 'sprzedaj',
+  signup: 'załóż konto',
+  orders: 'zamowienia',
+  me: 'moje konto',
+}
+
 const Nav = () => (
   <NavStyles>
-    <Link href="/items">
-      <a>items</a>
-    </Link>
-    <Link href="/sell">
-      <a>sell</a>
-    </Link>
-    <Link href="/signup">
-      <a>signup</a>
-    </Link>
-    <Link href="/orders">
-      <a>orders</a>
-    </Link>
-    <Link href="/me">
-      <a>me</a>
-    </Link>
+    {Object.entries(links).map(([k, v]) => (
+      <Link key={k} href={`/${k}`}>
+        <a>{v}</a>
+      </Link>
+    ))}
   </NavStyles>
 )
 
