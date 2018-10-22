@@ -1,5 +1,5 @@
-/* eslint-disable */
 export default function(amount) {
+  // eslint-disable-next-line
   Intl = require('intl')
   require('intl/locale-data/jsonp/pl')
   const options = {
