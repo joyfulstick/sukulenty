@@ -33,7 +33,7 @@ class Items extends Component {
       <Center>
         <Query query={ALL_ITEMS_QUERY}>
           {({ data, error, loading }) => {
-            if (loading) return <p>Loading...</p>
+            if (loading) return <p>Wczytywanie...</p>
             if (error) return <p>{error.message}</p>
             return (
               <ItemsList>
