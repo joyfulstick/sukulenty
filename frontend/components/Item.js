@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import DeleteItem from './DeleteItem'
 import ItemStyles from './styles/ItemStyles'
 import Link from 'next/link'
 import PriceTag from './styles/PriceTag'
@@ -35,8 +36,8 @@ class Item extends Component {
           >
             <a>Edytuj 📝</a>
           </Link>
-          <button>Dodaj</button>
-          <button>Usuń</button>
+          <button>🛒 Dodaj do koszyka</button>
+          <DeleteItem id={id}>❎ Usuń przedmiot</DeleteItem>
         </div>
       </ItemStyles>
     )

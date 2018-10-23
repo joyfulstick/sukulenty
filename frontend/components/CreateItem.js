@@ -42,12 +42,12 @@ class CreateItem extends Component {
 
   uploadFile = async e => {
     const { files } = e.target
-    const data = new FormData()
-    data.append('file', files[0])
-    data.append('upload_preset', 'stickfits')
+    const body = new FormData()
+    body.append('file', files[0])
+    body.append('upload_preset', 'stickfits')
     const res = await fetch(
       'https://api.cloudinary.com/v1_1/joyfulstick/image/upload',
-      { method: 'POST', mode: 'cors', body: data },
+      { method: 'POST', body },
     )
     const file = await res.json()
     this.setState({
