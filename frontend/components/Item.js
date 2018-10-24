@@ -37,7 +37,7 @@ class Item extends Component {
             <a>Edytuj 📝</a>
           </Link>
           <button>🛒 Dodaj do koszyka</button>
-          <DeleteItem id={id}>❎ Usuń przedmiot</DeleteItem>
+          <DeleteItem id={id} image={image}>❎ Usuń przedmiot</DeleteItem>
         </div>
       </ItemStyles>
     )

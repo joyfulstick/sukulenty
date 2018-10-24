@@ -1,3 +1,9 @@
+import {
+  API_KEY,
+  createSignature,
+  getPublicId,
+  timestamp,
+} from '../lib/cloudinaryUtils'
 import React, { Component } from 'react'
 import { ALL_ITEMS_QUERY } from '../pages/items'
 import { Mutation } from 'react-apollo'
@@ -21,6 +27,20 @@ class DeleteItem extends Component {
     cache.writeQuery({ query: ALL_ITEMS_QUERY, data })
   }
 
+  destroyFile = () => {
+    const { image } = this.props
+    const body = new FormData()
+    body.append('timestamp', timestamp)
+    body.append('public_id', getPublicId(image))
+    body.append('api_key', API_KEY)
+    body.append('signature', createSignature(image))
+
+    fetch('https://api.cloudinary.com/v1_1/joyfulstick/image/destroy', {
+      method: 'POST',
+      body,
+    })
+  }
+
   render() {
     const {
       props: { children, id },
@@ -37,6 +57,7 @@ class DeleteItem extends Component {
             onClick={() => {
               if (confirm('Czy na pewno chcesz usunąć przedmiot?')) {
                 deleteItem()
+                this.destroyFile()
               }
             }}
           >
@@ -52,4 +73,5 @@ export default DeleteItem
 
 DeleteItem.propTypes = {
   id: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 }
