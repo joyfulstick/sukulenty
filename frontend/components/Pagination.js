@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
 import { perPage } from '../config'
+import polishPlural from '../lib/polishPurals'
 
 const PAGINATION_QUERY = gql`
   query PAGINATION_QUERY {
@@ -46,7 +47,10 @@ class Pagination extends Component {
                 <a aria-disabled={page <= 1}>⬅️ Poprzednia</a>
               </Link>
               <p>{counter}</p>
-              <p>{count} przedmiotów</p>
+              <p>
+                <span>{count} </span>
+                {polishPlural('przedmiot', 'przedmoty', 'przedmiotów')(count)}
+              </p>
               <Link
                 prefetch
                 href={{
@@ -64,7 +68,7 @@ class Pagination extends Component {
   }
 }
 
-export default Pagination
+export { Pagination as default, PAGINATION_QUERY }
 
 Pagination.propTypes = {
   page: PropTypes.number.isRequired,

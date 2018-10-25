@@ -15,17 +15,14 @@ type Mutation {
 }
 
 type Query {
-  items: [Item]!
-
-  item(where: ItemWhereUniqueInput!): Item
-
-  itemsConnection(
+  items(
     where: ItemWhereInput
     orderBy: ItemOrderByInput
     skip: Int
-    after: String
-    before: String
     first: Int
-    last: Int
-  ): ItemConnection!
+  ): [Item]!
+
+  item(where: ItemWhereUniqueInput!): Item
+
+  itemsConnection(where: ItemWhereInput): ItemConnection!
 }

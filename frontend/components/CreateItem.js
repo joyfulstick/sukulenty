@@ -3,6 +3,7 @@ import { ALL_ITEMS_QUERY } from './Items'
 import Error from '../components/ErrorMessage'
 import Form from './styles/Form'
 import { Mutation } from 'react-apollo'
+import { PAGINATION_QUERY } from './Pagination'
 import Router from 'next/router'
 import gql from 'graphql-tag'
 
@@ -33,6 +34,7 @@ class CreateItem extends Component {
     price: 0,
     image: '',
     largeImage: '',
+    isValid: false,
   }
 
   handleChange = e => {
@@ -42,30 +44,35 @@ class CreateItem extends Component {
   }
 
   uploadFile = async e => {
-    const { files } = e.target
+    const [file] = e.target.files
+    if (!file) return
     const body = new FormData()
-    body.append('file', files[0])
+    body.append('file', file)
     body.append('upload_preset', 'stickfits')
     const res = await fetch(
       'https://api.cloudinary.com/v1_1/joyfulstick/image/upload',
       { method: 'POST', body },
     )
-    const file = await res.json()
+    const img = await res.json()
     this.setState({
-      image: file.secure_url,
-      largeImage: file.eager[0].secure_url,
+      image: img.secure_url,
+      largeImage: img.eager[0].secure_url,
+      isValid: true,
     })
   }
 
   render() {
     const {
-      state: { title, price, description, image },
+      state: { title, price, description, image, isValid },
       handleChange,
       uploadFile,
     } = this
     return (
       <Mutation
-        refetchQueries={[{ query: ALL_ITEMS_QUERY }]}
+        refetchQueries={[
+          { query: ALL_ITEMS_QUERY },
+          { query: PAGINATION_QUERY },
+        ]}
         mutation={CREATE_ITEM_MUTATION}
         variables={this.state}
       >
@@ -136,7 +143,7 @@ class CreateItem extends Component {
                   required
                 />
               </label>
-              <button type="submit">
+              <button type="submit" disabled={!isValid}>
                 Dodaj
                 {loading ? 'e' : ''}
               </button>
