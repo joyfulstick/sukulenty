@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Error from '../components/ErrorMessage'
 import Item from '../components/Item'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
@@ -34,7 +35,7 @@ class Items extends Component {
         <Query query={ALL_ITEMS_QUERY}>
           {({ data, error, loading }) => {
             if (loading) return <p>Wczytywanie...</p>
-            if (error) return <p>{error.message}</p>
+            if (error) return <Error error={error} />
             return (
               <ItemsList>
                 {data.items.map(item => (
