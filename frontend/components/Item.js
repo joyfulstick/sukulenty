@@ -14,18 +14,20 @@ class Item extends Component {
     } = this.props
     return (
       <ItemStyles>
-        {image && <img src={image} alt={title} />}
-        <Title>
-          <Link
-            href={{
-              pathname: '/item',
-              query: { id },
-            }}
-          >
-            <a>{title}</a>
-          </Link>
-        </Title>
-        <PriceTag>{formatMoney(price)}</PriceTag>
+        <Link
+          href={{
+            pathname: '/item',
+            query: { id },
+          }}
+        >
+          <a>
+            {image && <img src={image} alt={title} />}
+            <Title>
+              <h3>{title}</h3>
+            </Title>
+            <PriceTag>{formatMoney(price)}</PriceTag>
+          </a>
+        </Link>
         <p>{description}</p>
         <div className="buttonList">
           <Link
@@ -37,7 +39,9 @@ class Item extends Component {
             <a>Edytuj 📝</a>
           </Link>
           <button>🛒 Dodaj do koszyka</button>
-          <DeleteItem id={id} image={image}>❎ Usuń przedmiot</DeleteItem>
+          <DeleteItem id={id} image={image}>
+            ❎ Usuń przedmiot
+          </DeleteItem>
         </div>
       </ItemStyles>
     )
