@@ -5,7 +5,7 @@ import {
   timestamp,
 } from '../lib/cloudinaryUtils'
 import React, { Component } from 'react'
-import { ALL_ITEMS_QUERY } from '../pages/items'
+import { ALL_ITEMS_QUERY } from './Items'
 import { Mutation } from 'react-apollo'
 import PropTypes from 'prop-types'
 import gql from 'graphql-tag'

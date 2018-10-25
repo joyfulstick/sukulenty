@@ -48,8 +48,8 @@ class Item extends Component {
   }
 }
 
+export default Item
+
 Item.propTypes = {
   item: PropTypes.object.isRequired,
 }
-
-export default Item

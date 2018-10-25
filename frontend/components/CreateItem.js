@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { ALL_ITEMS_QUERY } from './Items'
 import Error from '../components/ErrorMessage'
 import Form from './styles/Form'
 import { Mutation } from 'react-apollo'
@@ -63,7 +64,11 @@ class CreateItem extends Component {
       uploadFile,
     } = this
     return (
-      <Mutation mutation={CREATE_ITEM_MUTATION} variables={this.state}>
+      <Mutation
+        refetchQueries={[{ query: ALL_ITEMS_QUERY }]}
+        mutation={CREATE_ITEM_MUTATION}
+        variables={this.state}
+      >
         {(createItem, { loading, error }) => (
           <Form
             onSubmit={async e => {
