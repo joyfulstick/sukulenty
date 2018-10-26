@@ -26,11 +26,12 @@ class Pagination extends Component {
           if (loading) return <p>Wczytywanie...</p>
 
           const { count } = data.itemsConnection.aggregate,
-            pages = Math.ceil(count / perPage),
             { page } = this.props,
-            counter = `Strona ${page}${String.fromCharCode(
-              160,
-            )}z${String.fromCharCode(160)}${pages}`
+            nbsp = String.fromCharCode(160)
+
+          let pages = Math.ceil(count / perPage)
+          pages = pages <= 0 ? 1 : pages
+          const counter = `Strona ${page}${nbsp}z${nbsp}${pages}`
 
           return (
             <PaginationStyles>
