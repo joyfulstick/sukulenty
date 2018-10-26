@@ -3,8 +3,8 @@ import SingleItem from '../components/SingleItem'
 
 const Item = props => <SingleItem id={props.query.id} />
 
-export default Item
-
 Item.propTypes = {
   query: PropTypes.object.isRequired,
 }
+
+export default Item

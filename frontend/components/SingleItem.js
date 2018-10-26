@@ -70,8 +70,8 @@ class SingleItem extends Component {
   }
 }
 
-export default SingleItem
-
 SingleItem.propTypes = {
   id: PropTypes.string.isRequired,
 }
+
+export default SingleItem

@@ -69,8 +69,8 @@ class Pagination extends Component {
   }
 }
 
-export { Pagination as default, PAGINATION_QUERY }
-
 Pagination.propTypes = {
   page: PropTypes.number.isRequired,
 }
+
+export { Pagination as default, PAGINATION_QUERY }

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import NavStyles from './styles/NavStyles'
+import User from './User'
 
 const links = {
   items: 'sklep',
@@ -11,6 +12,7 @@ const links = {
 
 const Nav = () => (
   <NavStyles>
+    <User>{({ data: { me } }) => me && <p>{me.name}</p>}</User>
     {Object.entries(links).map(([k, v]) => (
       <Link key={k} href={`/${k}`}>
         <a>{v}</a>

@@ -134,8 +134,8 @@ class UpdateItem extends Component {
   }
 }
 
-export { UpdateItem as default, UPDATE_ITEM_MUTATION }
-
 UpdateItem.propTypes = {
   id: PropTypes.string.isRequired,
 }
+
+export { UpdateItem as default, UPDATE_ITEM_MUTATION }

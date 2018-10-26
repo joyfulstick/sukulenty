@@ -63,8 +63,8 @@ class Items extends Component {
   }
 }
 
-export { Items as default, ALL_ITEMS_QUERY }
-
 Items.propTypes = {
   page: PropTypes.number.isRequired,
 }
+
+export { Items as default, ALL_ITEMS_QUERY }

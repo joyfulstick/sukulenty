@@ -71,9 +71,9 @@ class DeleteItem extends Component {
   }
 }
 
-export default DeleteItem
-
 DeleteItem.propTypes = {
   id: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
 }
+
+export default DeleteItem
