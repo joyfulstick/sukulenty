@@ -1,24 +1,39 @@
 import Link from 'next/link'
 import NavStyles from './styles/NavStyles'
+import Signout from './Signout'
 import User from './User'
 
-const links = {
-  items: 'sklep',
+const guardedLinks = {
   sell: 'sprzedaj',
-  signup: 'utwórz konto',
   orders: 'zamowienia',
   me: 'moje konto',
 }
 
 const Nav = () => (
-  <NavStyles>
-    <User>{({ data: { me } }) => me && <p>{me.name}</p>}</User>
-    {Object.entries(links).map(([k, v]) => (
-      <Link key={k} href={`/${k}`}>
-        <a>{v}</a>
-      </Link>
-    ))}
-  </NavStyles>
+  <User>
+    {({ data: { me } }) => (
+      <NavStyles>
+        <Link key="items" href={'/items'}>
+          <a>sklep</a>
+        </Link>
+        {me && (
+          <>
+            {Object.entries(guardedLinks).map(([k, v]) => (
+              <Link key={k} href={`/${k}`}>
+                <a>{v}</a>
+              </Link>
+            ))}
+            <Signout />
+          </>
+        )}
+        {!me && (
+          <Link key="signup" href={'/signup'}>
+            <a>logowanie</a>
+          </Link>
+        )}
+      </NavStyles>
+    )}
+  </User>
 )
 
 export default Nav

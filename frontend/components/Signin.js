@@ -5,13 +5,9 @@ import Form from './styles/Form'
 import { Mutation } from 'react-apollo'
 import gql from 'graphql-tag'
 
-const SIGNUP_MUTATION = gql`
-  mutation SIGNUP_MUTATION(
-    $email: String!
-    $password: String!
-    $name: String!
-  ) {
-    signup(email: $email, password: $password, name: $name) {
+const SIGNIN_MUTATION = gql`
+  mutation SIGNIN_MUTATION($email: String!, $password: String!) {
+    signin(email: $email, password: $password) {
       id
       email
       name
@@ -19,10 +15,9 @@ const SIGNUP_MUTATION = gql`
   }
 `
 
-class Signup extends Component {
+class Signin extends Component {
   state = {
     email: '',
-    name: '',
     password: '',
   }
 
@@ -32,25 +27,24 @@ class Signup extends Component {
     const { state, handleChangeValue } = this
     return (
       <Mutation
-        mutation={SIGNUP_MUTATION}
+        mutation={SIGNIN_MUTATION}
         variables={state}
         refetchQueries={[{ query: CURENT_USER_QUERY }]}
       >
-        {(signup, { error, loading }) => (
+        {(signin, { error, loading }) => (
           <Form
             method="post"
             onSubmit={async e => {
               e.preventDefault()
-              await signup().catch(err => console.log(err)) // eslint-disable-line
+              await signin().catch(err => console.log(err)) // eslint-disable-line
               this.setState({
                 email: '',
-                name: '',
                 password: '',
               })
             }}
           >
             <fieldset disabled={loading} aria-busy={loading}>
-              <h2>Rejestracja</h2>
+              <h2>Logowanie</h2>
               <Error error={error} />
               <label>
                 Email
@@ -59,17 +53,6 @@ class Signup extends Component {
                   name="email"
                   placeholder="e-mail"
                   value={state.email}
-                  onChange={handleChangeValue}
-                  required
-                />
-              </label>
-              <label>
-                Name
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Imię"
-                  value={state.name}
                   onChange={handleChangeValue}
                   required
                 />
@@ -85,7 +68,7 @@ class Signup extends Component {
                   required
                 />
               </label>
-              <button type="submit">Zapisz się</button>
+              <button type="submit">Zaloguj</button>
             </fieldset>
           </Form>
         )}
@@ -94,4 +77,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup
+export default Signin

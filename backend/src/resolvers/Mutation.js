@@ -1,6 +1,14 @@
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
+function setCookieWithToken(user, ctx) {
+  const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET)
+  ctx.response.cookie('token', token, {
+    httpOnly: true,
+    maxAge: 1000 * 60 * 60 * 24 * 365, // 1 year cookie
+  })
+}
+
 const Mutations = {
   createItem(parent, args, ctx, info) {
     return ctx.db.mutation.createItem(
@@ -41,12 +49,26 @@ const Mutations = {
       },
       info,
     )
-    const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET)
-    ctx.response.cookie('token', token, {
-      httpOnly: true,
-      maxAge: 1000 * 60 * 60 * 24 * 365, // 1 year cookie
-    })
+    setCookieWithToken(user, ctx)
     return user
+  },
+
+  async signin(parent, { email, password }, ctx, info) {
+    const user = await ctx.db.query.user({ where: { email } })
+    if (!user) {
+      throw new Error(`Nie ma użytkownika z emailem ${email}`)
+    }
+    const valid = await bcrypt.compare(password, user.password)
+    if (!valid) {
+      throw new Error('Błędne hasło')
+    }
+    setCookieWithToken(user, ctx)
+    return user
+  },
+
+  signout(parent, args, ctx, info) {
+    ctx.response.clearCookie('token')
+    return { message: 'Wylogowano' }
   },
 }
 
