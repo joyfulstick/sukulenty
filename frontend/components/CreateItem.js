@@ -34,7 +34,6 @@ class CreateItem extends Component {
     price: 0,
     image: '',
     largeImage: '',
-    isValid: false,
   }
 
   handleChange = e => {
@@ -57,24 +56,23 @@ class CreateItem extends Component {
     this.setState({
       image: img.secure_url,
       largeImage: img.eager[0].secure_url,
-      isValid: true,
     })
   }
 
   render() {
     const {
-      state: { title, price, description, image, isValid },
+      state: { title, price, description, image },
       handleChange,
       uploadFile,
     } = this
     return (
       <Mutation
+        mutation={CREATE_ITEM_MUTATION}
+        variables={this.state}
         refetchQueries={[
           { query: ALL_ITEMS_QUERY },
           { query: PAGINATION_QUERY },
         ]}
-        mutation={CREATE_ITEM_MUTATION}
-        variables={this.state}
       >
         {(createItem, { loading, error }) => (
           <Form
@@ -91,15 +89,16 @@ class CreateItem extends Component {
             <fieldset disabled={loading} aria-busy={loading}>
               <label htmlFor="file">
                 Zdjęcie
-                <input
-                  type="file"
-                  name="file"
-                  id="file"
-                  placeholder="Dodaj zdjęcie"
-                  onChange={uploadFile}
-                  required
-                />
-                {image && (
+                {!image ? (
+                  <input
+                    type="file"
+                    name="file"
+                    id="file"
+                    placeholder="Dodaj zdjęcie"
+                    onChange={uploadFile}
+                    required
+                  />
+                ) : (
                   <img
                     width="200"
                     src={image}
@@ -143,7 +142,7 @@ class CreateItem extends Component {
                   required
                 />
               </label>
-              <button type="submit" disabled={!isValid}>
+              <button type="submit" disabled={!image || !title || !description}>
                 Dodaj
                 {loading ? 'e' : ''}
               </button>

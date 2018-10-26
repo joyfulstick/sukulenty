@@ -49,10 +49,13 @@ class DeleteItem extends Component {
     } = this
     return (
       <Mutation
-        refetchQueries={[{ query: PAGINATION_QUERY }]}
         mutation={DELETE_ITEM_MUTATION}
         variables={{ id }}
         update={update}
+        refetchQueries={[
+          { query: ALL_ITEMS_QUERY },
+          { query: PAGINATION_QUERY },
+        ]}
       >
         {deleteItem => (
           <button
