@@ -1,5 +1,7 @@
-const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
+const bcrypt = require('bcryptjs'),
+  jwt = require('jsonwebtoken'),
+  { randomBytes } = require('crypto'),
+  { promisify } = require('util')
 
 function setCookieWithToken(user, ctx) {
   const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET)
@@ -8,6 +10,8 @@ function setCookieWithToken(user, ctx) {
     maxAge: 1000 * 60 * 60 * 24 * 365, // 1 year cookie
   })
 }
+
+const hourMilliseconds = 3600000
 
 const Mutations = {
   createItem(parent, args, ctx, info) {
@@ -69,6 +73,54 @@ const Mutations = {
   signout(parent, args, ctx, info) {
     ctx.response.clearCookie('token')
     return { message: 'Wylogowano' }
+  },
+
+  async requestReset(parent, { email }, ctx, info) {
+    const user = await ctx.db.query.user({ where: { email } })
+    if (!user) {
+      throw new Error(`Nie ma użytkownika z emailem ${email}`)
+    }
+    const randomBytesPromisified = promisify(randomBytes)
+    const resetToken = (await randomBytesPromisified(20)).toString('hex')
+    const resetTokenExpiry = Date.now() + hourMilliseconds
+    const res = await ctx.db.mutation.updateUser({
+      where: { email },
+      data: { resetToken, resetTokenExpiry },
+    })
+    console.log(res)
+    return { message: 'Wysłano wiadomość' }
+  },
+
+  async resetPassword(
+    parent,
+    { password, confirmPassword, resetToken },
+    ctx,
+    info,
+  ) {
+    if (password !== confirmPassword) {
+      console.log(password, confirmPassword)
+      throw new Error('Hasła nie są takie same!')
+    }
+    const [user] = await ctx.db.query.users({
+      where: {
+        resetToken,
+        resetTokenExpiry_gte: Date.now() - hourMilliseconds,
+      },
+    })
+    if (!user) {
+      throw new Error('Token jest nieprawidłowy lub nieważny!')
+    }
+    const newPassword = await bcrypt.hash(password, 10)
+    const updatedUser = await ctx.db.mutation.updateUser({
+      where: { email: user.email },
+      data: {
+        password: newPassword,
+        resetToken: null,
+        resetTokenExpiry: null,
+      },
+    })
+    setCookieWithToken(updatedUser, ctx)
+    return updatedUser
   },
 }
 
