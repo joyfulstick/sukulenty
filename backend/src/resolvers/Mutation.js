@@ -1,7 +1,8 @@
 const bcrypt = require('bcryptjs'),
   jwt = require('jsonwebtoken'),
   { randomBytes } = require('crypto'),
-  { promisify } = require('util')
+  { promisify } = require('util'),
+  { transport, makeEmail } = require('../mail')
 
 function setCookieWithToken(user, ctx) {
   const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET)
@@ -87,7 +88,18 @@ const Mutations = {
       where: { email },
       data: { resetToken, resetTokenExpiry },
     })
-    console.log(res)
+    const mailRes = await transport.sendMail({
+      from: 'stickfits.com',
+      to: email,
+      subject: 'Resetowania hasła',
+      html: makeEmail(user)(`
+      Otrzymałem prośbę o zresetowanie hasła do Twojego konta.
+      \n\n
+      <a href="${process.env.FRONT}/reset?resetToken=${resetToken}">
+      Kliknij, aby wybrać nowe hasło
+      </a>
+      `),
+    })
     return { message: 'Wysłano wiadomość' }
   },
 
