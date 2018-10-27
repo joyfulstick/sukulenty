@@ -3,11 +3,11 @@ function hasPermission(user, permissionsNeeded) {
     permissionsNeeded.includes(permissionTheyHave),
   )
   if (!matchedPermissions.length) {
-    throw new Error(`You do not have sufficient permissions
+    throw new Error(`Nie masz wystarczających uprawnień
 
       : ${permissionsNeeded}
 
-      You Have:
+      Masz następujące uprawnienia:
 
       ${user.permissions}
       `)

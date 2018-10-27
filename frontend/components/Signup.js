@@ -52,7 +52,7 @@ class Signup extends Component {
             <fieldset disabled={loading} aria-busy={loading}>
               <h2>Rejestracja</h2>
               <Error error={error} />
-              <label>
+              <label htmlFor="email">
                 Email
                 <input
                   type="email"
@@ -63,7 +63,7 @@ class Signup extends Component {
                   required
                 />
               </label>
-              <label>
+              <label htmlFor="name">
                 Imię
                 <input
                   type="text"
@@ -74,7 +74,7 @@ class Signup extends Component {
                   required
                 />
               </label>
-              <label>
+              <label htmlFor="password">
                 Hasło
                 <input
                   type="password"
