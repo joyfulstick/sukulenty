@@ -47,7 +47,7 @@ class CreateItem extends Component {
     if (!file) return
     const body = new FormData()
     body.append('file', file)
-    body.append('upload_preset', 'stickfits')
+    body.append('upload_preset', 'sukulenty')
     const res = await fetch(
       'https://api.cloudinary.com/v1_1/joyfulstick/image/upload',
       { method: 'POST', body },

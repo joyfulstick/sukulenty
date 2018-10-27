@@ -36,7 +36,7 @@ class Pagination extends Component {
           return (
             <PaginationStyles>
               <Head>
-                <title>Stick Fits! - {counter} </title>
+                <title>Sukulenty! - {counter} </title>
               </Head>
               <Link
                 prefetch

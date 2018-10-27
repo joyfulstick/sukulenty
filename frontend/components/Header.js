@@ -38,10 +38,10 @@ const Logo = styled.h1`
   font-size: 4rem;
   margin-left: 2rem;
   position: relative;
-  transform: skew(-20deg) translateZ(0);
+  transform: perspective(8rem) rotateX(-5deg);
   a {
     padding: 0.5rem 1rem;
-    background: ${props => props.theme.gradient};
+    background: ${props => props.theme.green};
 
     color: white;
     text-transform: uppercase;
@@ -58,7 +58,7 @@ const Header = () => (
     <div className="bar">
       <Logo>
         <Link href="/">
-          <a>Stick Fits</a>
+          <a>Sukulenty</a>
         </Link>
       </Logo>
       <Nav />

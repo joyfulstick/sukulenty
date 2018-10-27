@@ -1,5 +1,5 @@
-# source: https://eu1.prisma.sh/michal-44ed3f/stiiick-fits/dev
-# timestamp: Thu Oct 25 2018 21:20:12 GMT+0200 (Central European Summer Time)
+# source: https://eu1.prisma.sh/michal-44ed3f/sukulenty/dev
+# timestamp: Sat Oct 27 2018 14:29:21 GMT+0200 (Central European Summer Time)
 
 type AggregateItem {
   count: Int!
@@ -421,6 +421,10 @@ type PageInfo {
 enum Permission {
   ADMIN
   USER
+  ITEMCREATE
+  ITEMUPDATE
+  ITEMCDELATE
+  PERMISIONUPDATE
 }
 
 type Query {

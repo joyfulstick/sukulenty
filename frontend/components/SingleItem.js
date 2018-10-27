@@ -55,7 +55,7 @@ class SingleItem extends Component {
           return (
             <SingleItemStyles>
               <Head>
-                <title>Stick Fits! | {title}</title>
+                <title>Sukulenty! | {title}</title>
               </Head>
               <img src={largeImage} alt={title} />
               <article className="details">

@@ -1,7 +1,7 @@
 {
-  "name": "stick-fits-frontend",
+  "name": "sukulenty-frontend",
   "version": "1.0.0",
-  "description": "Stick Fits! An example React, GraphQL, Next and Apollo",
+  "description": "Sukulenty! An example React, GraphQL, Next and Apollo",
   "main": "index.js",
   "scripts": {
     "dev": "next -p 7777",

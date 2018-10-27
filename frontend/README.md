@@ -1,3 +1,3 @@
-# stick-fits
+# sukulenty
 
 frontend

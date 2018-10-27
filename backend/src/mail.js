@@ -20,7 +20,7 @@ const makeEmail = user => message => `
     <h2>Cześć ${user}!</h2>
     <p>${message}</p>
 
-    <p>Michał</p>
+    <p>🌵🌵Sukulenty🌵🌵</p>
   </article>
 `
 
