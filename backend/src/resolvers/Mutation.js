@@ -16,9 +16,17 @@ const hourMilliseconds = 3600000
 
 const Mutations = {
   createItem(parent, args, ctx, info) {
+    if (!ctx.request.userId) {
+      throw new Error('Musisz być zalogowany, żeby dodać sukulent')
+    }
     return ctx.db.mutation.createItem(
       {
         data: {
+          user: {
+            connect: {
+              id: ctx.request.userId,
+            },
+          },
           ...args,
         },
       },

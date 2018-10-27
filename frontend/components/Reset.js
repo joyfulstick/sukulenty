@@ -65,7 +65,7 @@ class Reset extends Component {
             }}
           >
             <fieldset disabled={loading} aria-busy={loading}>
-              <h2>Tworzenie nowego hasła</h2>
+              <h2>Wpisz nowe hasło</h2>
               <Error error={error} />
               <label>
                 Nowe hasło

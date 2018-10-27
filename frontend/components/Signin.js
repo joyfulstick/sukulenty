@@ -38,7 +38,6 @@ class Signin extends Component {
               e.preventDefault()
               await signin().catch(err => console.log(err)) // eslint-disable-line
               this.setState({
-                email: '',
                 password: '',
               })
             }}

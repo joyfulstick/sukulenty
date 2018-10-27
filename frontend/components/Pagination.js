@@ -50,7 +50,7 @@ class Pagination extends Component {
               <p>{counter}</p>
               <p>
                 <span>{count} </span>
-                {polishPlural('przedmiot', 'przedmoty', 'przedmiotów')(count)}
+                {polishPlural('sukulent', 'sukulenty', 'sukulentów')(count)}
               </p>
               <Link
                 prefetch
