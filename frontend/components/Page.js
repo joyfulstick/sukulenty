@@ -24,10 +24,13 @@ const StyledPage = styled.div`
   background: white;
   color: ${props => props.theme.black};
 `
-const Inner = styled.div`
+const Main = styled.main`
   max-width: ${props => props.theme.maxWidth};
   margin: 264px auto 0 auto;
   padding: 2rem;
+  @media (max-width: 700px) {
+    padding: 0;
+  }
 `
 injectGlobal`
 @font-face {
@@ -64,7 +67,7 @@ class Page extends Component {
         <StyledPage>
           <Meta />
           <Header />
-          <Inner>{this.props.children}</Inner>
+          <Main>{this.props.children}</Main>
         </StyledPage>
       </ThemeProvider>
     )

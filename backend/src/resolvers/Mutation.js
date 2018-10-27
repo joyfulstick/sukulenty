@@ -88,18 +88,18 @@ const Mutations = {
       where: { email },
       data: { resetToken, resetTokenExpiry },
     })
-    const mailRes = await transport.sendMail({
-      from: 'stickfits.com',
-      to: email,
-      subject: 'Resetowania hasła',
-      html: makeEmail(user)(`
-      Otrzymałem prośbę o zresetowanie hasła do Twojego konta.
-      \n\n
-      <a href="${process.env.FRONT}/reset?resetToken=${resetToken}">
-      Kliknij, aby wybrać nowe hasło
-      </a>
-      `),
-    })
+    // const mailRes = await transport.sendMail({
+    //   from: 'stickfits.com',
+    //   to: email,
+    //   subject: 'Resetowania hasła',
+    //   html: makeEmail(user)(`
+    //   Otrzymałem prośbę o zresetowanie hasła do Twojego konta.
+    //   \n\n
+    //   <a href="${process.env.FRONT}/reset?resetToken=${resetToken}">
+    //   Kliknij, aby wybrać nowe hasło
+    //   </a>
+    //   `),
+    // })
     return { message: 'Wysłano wiadomość' }
   },
 

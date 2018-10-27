@@ -64,7 +64,7 @@ class Signup extends Component {
                 />
               </label>
               <label>
-                Name
+                Imię
                 <input
                   type="text"
                   name="name"
@@ -75,7 +75,7 @@ class Signup extends Component {
                 />
               </label>
               <label>
-                Password
+                Hasło
                 <input
                   type="password"
                   name="password"

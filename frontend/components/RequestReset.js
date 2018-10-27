@@ -1,24 +1,20 @@
 import React, { Component } from 'react'
-import { CURENT_USER_QUERY } from './User'
 import Error from './ErrorMessage'
 import Form from './styles/Form'
 import { Mutation } from 'react-apollo'
 import gql from 'graphql-tag'
 
-const SIGNIN_MUTATION = gql`
-  mutation SIGNIN_MUTATION($email: String!, $password: String!) {
-    signin(email: $email, password: $password) {
-      id
-      email
-      name
+const REQUEST_RESET_MUTATION = gql`
+  mutation REQUEST_RESET_MUTATION($email: String!) {
+    requestReset(email: $email) {
+      message
     }
   }
 `
 
-class Signin extends Component {
+class RequestReset extends Component {
   state = {
     email: '',
-    password: '',
   }
 
   handleChangeValue = e => this.setState({ [e.target.name]: e.target.value })
@@ -26,26 +22,29 @@ class Signin extends Component {
   render() {
     const { state, handleChangeValue } = this
     return (
-      <Mutation
-        mutation={SIGNIN_MUTATION}
-        variables={state}
-        refetchQueries={[{ query: CURENT_USER_QUERY }]}
-      >
-        {(signin, { error, loading }) => (
+      <Mutation mutation={REQUEST_RESET_MUTATION} variables={state}>
+        {(requestReset, { error, loading, called }) => (
           <Form
             method="post"
             onSubmit={async e => {
               e.preventDefault()
-              await signin().catch(err => console.log(err)) // eslint-disable-line
+              await requestReset().catch(err => console.log(err)) // eslint-disable-line
               this.setState({
                 email: '',
-                password: '',
               })
             }}
           >
             <fieldset disabled={loading} aria-busy={loading}>
-              <h2>Logowanie</h2>
+              <h2>Resetowanie hasła</h2>
               <Error error={error} />
+              {!error &&
+                !loading &&
+                called && (
+                  <p>
+                    Wiadomość z linkiem do resetu hasła została wysłana. Sprawdź
+                    skrzynkę e-mail 📬
+                  </p>
+                )}
               <label>
                 Email
                 <input
@@ -57,18 +56,7 @@ class Signin extends Component {
                   required
                 />
               </label>
-              <label>
-                Hasło
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Hasło"
-                  value={state.password}
-                  onChange={handleChangeValue}
-                  required
-                />
-              </label>
-              <button type="submit">Zaloguj</button>
+              <button type="submit">Resetuj</button>
             </fieldset>
           </Form>
         )}
@@ -77,4 +65,4 @@ class Signin extends Component {
   }
 }
 
-export default Signin
+export default RequestReset
