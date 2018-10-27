@@ -38,6 +38,7 @@ class Items extends Component {
       <Center>
         <Pagination page={page} />
         <Query
+          fetchPolicy="cache-and-network"
           query={ALL_ITEMS_QUERY}
           variables={{
             skip: page * perPage - perPage,
@@ -49,7 +50,7 @@ class Items extends Component {
             return (
               <ItemsList>
                 {data.items.map(item => (
-                  <Item key={item.id} item={item}>
+                  <Item key={item.id} item={item} page={page}>
                     {item.title}
                   </Item>
                 ))}

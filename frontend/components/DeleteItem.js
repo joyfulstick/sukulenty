@@ -10,6 +10,7 @@ import { Mutation } from 'react-apollo'
 import { PAGINATION_QUERY } from './Pagination'
 import PropTypes from 'prop-types'
 import gql from 'graphql-tag'
+import { perPage } from '../config'
 
 const DELETE_ITEM_MUTATION = gql`
   mutation DELETE_ITEM_MUTATION($id: ID!) {
@@ -20,14 +21,6 @@ const DELETE_ITEM_MUTATION = gql`
 `
 
 class DeleteItem extends Component {
-  update = (cache, payload) => {
-    const data = { ...cache.readQuery({ query: ALL_ITEMS_QUERY }) }
-    data.items = data.items.filter(
-      item => !Object.is(item.id, payload.data.deleteItem.id),
-    )
-    cache.writeQuery({ query: ALL_ITEMS_QUERY, data })
-  }
-
   destroyFile = () => {
     const { image } = this.props
     const body = new FormData()
@@ -44,16 +37,19 @@ class DeleteItem extends Component {
 
   render() {
     const {
-      props: { children, id },
-      update,
+      props: { children, id, page },
     } = this
     return (
       <Mutation
         mutation={DELETE_ITEM_MUTATION}
         variables={{ id }}
-        update={update}
         refetchQueries={[
-          { query: ALL_ITEMS_QUERY },
+          {
+            query: ALL_ITEMS_QUERY,
+            variables: {
+              skip: page * perPage - perPage,
+            },
+          },
           { query: PAGINATION_QUERY },
         ]}
       >
@@ -77,6 +73,7 @@ class DeleteItem extends Component {
 DeleteItem.propTypes = {
   id: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  page: PropTypes.number.isRequired,
 }
 
 export default DeleteItem

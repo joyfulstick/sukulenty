@@ -13,7 +13,7 @@ const Nav = () => (
   <User>
     {({ data: { me } }) => (
       <NavStyles>
-        <Link key="items" href={'/items'}>
+        <Link prefetch key="items" href={'/items'}>
           <a>sklep</a>
         </Link>
         {me && (

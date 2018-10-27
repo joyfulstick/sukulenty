@@ -11,6 +11,7 @@ class Item extends Component {
   render() {
     const {
       item: { id, title, price, description, image },
+      page,
     } = this.props
     return (
       <ItemStyles>
@@ -39,7 +40,7 @@ class Item extends Component {
             <a>Edytuj 📝</a>
           </Link>
           <button>🛒 Dodaj do koszyka</button>
-          <DeleteItem id={id} image={image}>
+          <DeleteItem id={id} image={image} page={page}>
             ❎ Usuń przedmiot
           </DeleteItem>
         </div>
@@ -50,6 +51,7 @@ class Item extends Component {
 
 Item.propTypes = {
   item: PropTypes.object.isRequired,
+  page: PropTypes.number.isRequired,
 }
 
 export default Item
