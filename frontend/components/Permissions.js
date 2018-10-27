@@ -2,6 +2,7 @@ import Error from './ErrorMessage'
 import { Query } from 'react-apollo'
 import Table from './styles/Table'
 import gql from 'graphql-tag'
+import StickButton from './styles/StickButton'
 
 const posiblePermissions = [
   'ADMIN',
@@ -69,6 +70,9 @@ class UserPermissions extends React.Component {
             </label>
           </td>
         ))}
+        <td>
+          <StickButton>Zmień</StickButton>
+        </td>
       </tr>
     )
   }

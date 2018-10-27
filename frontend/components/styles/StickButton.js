@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const StickButton = styled.button`
-  background: red;
+  background: ${props => props.theme.green};
   color: white;
   font-weight: 500;
   border: 0;
