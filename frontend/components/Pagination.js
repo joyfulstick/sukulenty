@@ -41,7 +41,7 @@ class Pagination extends Component {
               <Link
                 prefetch
                 href={{
-                  pathname: 'items',
+                  pathname: '/items',
                   query: { page: page - 1 },
                 }}
               >
@@ -55,7 +55,7 @@ class Pagination extends Component {
               <Link
                 prefetch
                 href={{
-                  pathname: 'items',
+                  pathname: '/items',
                   query: { page: page + 1 },
                 }}
               >

@@ -5,6 +5,7 @@ import NavStyles from './styles/NavStyles'
 import Signout from './Signout'
 import { TOGGLE_CART_MUTATION } from './Cart'
 import User from './User'
+import totalItems from '../lib/calcTotalItems'
 
 const guardedLinks = {
   sell: 'sprzedaj',
@@ -31,12 +32,7 @@ const Nav = () => (
               {toggleCart => (
                 <button onClick={toggleCart}>
                   My Cart
-                  <CartCount
-                    count={me.cart.reduce(
-                      (tally, cartItem) => tally + cartItem.quantity,
-                      0,
-                    )}
-                  />
+                  <CartCount count={totalItems(me.cart)} />
                 </button>
               )}
             </Mutation>

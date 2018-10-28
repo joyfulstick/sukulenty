@@ -10,6 +10,7 @@ import { adopt } from 'react-adopt'
 import calcTotalPrice from '../lib/calcTotalPrice'
 import formatMoney from '../lib/formatMoney'
 import gql from 'graphql-tag'
+import totalItems from '../lib/calcTotalItems'
 
 const LOCAL_STATE_QUERY = gql`
   query {
@@ -44,7 +45,7 @@ const Cart = () => (
               &times;
             </CloseButton>
             <Supreme>{me.name}</Supreme>
-            <p>Masz {me.cart.length} 🌵 w koszyku</p>
+            <p>Masz {totalItems(me.cart)} 🌵 w koszyku</p>
           </header>
           <ul>
             {me.cart.map(cartItem => (
