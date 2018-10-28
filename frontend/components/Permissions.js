@@ -10,7 +10,7 @@ const posiblePermissions = [
   'USER',
   'ITEMCREATE',
   'ITEMUPDATE',
-  'ITEMCDELATE',
+  'ITEMDELETE',
   'PERMISIONUPDATE',
 ]
 
@@ -27,33 +27,36 @@ const ALL_USERS_QUERY = gql`
 
 const Permissions = () => (
   <Query query={ALL_USERS_QUERY}>
-    {payload => (
+    {({ data, error }) => (
       <>
-        <Error error={payload.error} />
-        <article>
-          <h2>Zarządzaj uprawnieniami</h2>
-          <Table>
-            <thead>
-              <tr>
-                <th>Nazwa</th>
-                <th>Email</th>
-                {posiblePermissions.map(permission => (
-                  <th key={permission}>{permission}</th>
-                ))}
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {payload.data.users.map(user => (
-                <UserPermissions
-                  key={user.id}
-                  user={user}
-                  posiblePermissions={posiblePermissions}
-                />
-              ))}
-            </tbody>
-          </Table>
-        </article>
+        <Error error={error} />
+        {data &&
+          data.users && (
+            <article>
+              <h2>Zarządzaj uprawnieniami</h2>
+              <Table>
+                <thead>
+                  <tr>
+                    <th>Nazwa</th>
+                    <th>Email</th>
+                    {posiblePermissions.map(permission => (
+                      <th key={permission}>{permission}</th>
+                    ))}
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.users.map(user => (
+                    <UserPermissions
+                      key={user.id}
+                      user={user}
+                      posiblePermissions={posiblePermissions}
+                    />
+                  ))}
+                </tbody>
+              </Table>
+            </article>
+          )}
       </>
     )}
   </Query>

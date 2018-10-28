@@ -45,7 +45,7 @@ class Signin extends Component {
             <fieldset disabled={loading} aria-busy={loading}>
               <h2>Logowanie</h2>
               <Error error={error} />
-              <label htmlFor="email">
+              <label>
                 Email
                 <input
                   type="email"
@@ -56,7 +56,7 @@ class Signin extends Component {
                   required
                 />
               </label>
-              <label htmlFor="password">
+              <label>
                 Hasło
                 <input
                   type="password"

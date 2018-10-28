@@ -1,10 +1,10 @@
 import Guard from '../components/Guard'
 import Permissions from '../components/Permissions'
 
-const PermissionsPage = () => (
+const Admin = () => (
   <Guard>
     <Permissions />
   </Guard>
 )
 
-export default PermissionsPage
+export default Admin

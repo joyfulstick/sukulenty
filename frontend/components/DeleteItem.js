@@ -56,8 +56,8 @@ class DeleteItem extends Component {
         {deleteItem => (
           <button
             onClick={() => {
-              if (confirm('Czy na pewno chcesz usunąć przedmiot?')) {
-                deleteItem()
+              if (confirm('Czy na pewno chcesz usunąć?')) {
+                deleteItem().catch(err => alert(err.message))
                 this.destroyFile()
               }
             }}

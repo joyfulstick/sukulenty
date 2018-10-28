@@ -1,5 +1,5 @@
 # source: https://eu1.prisma.sh/michal-44ed3f/sukulenty/dev
-# timestamp: Sat Oct 27 2018 17:35:26 GMT+0200 (Central European Summer Time)
+# timestamp: Sun Oct 28 2018 14:31:10 GMT+0100 (Central European Standard Time)
 
 type AggregateItem {
   count: Int!
@@ -427,7 +427,7 @@ enum Permission {
   USER
   ITEMCREATE
   ITEMUPDATE
-  ITEMCDELATE
+  ITEMDELETE
   PERMISIONUPDATE
 }
 

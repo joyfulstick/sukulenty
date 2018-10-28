@@ -70,6 +70,7 @@ class Reset extends Component {
               <label htmlFor="password">
                 Nowe hasło
                 <input
+                  id="password"
                   type="password"
                   name="password"
                   placeholder="Nowe hasło"
@@ -78,9 +79,10 @@ class Reset extends Component {
                   required
                 />
               </label>
-              <label htmlFor="password">
+              <label htmlFor="confirmPassword">
                 Potwierdź hasło
                 <input
+                  id="confirmPassword"
                   type="password"
                   name="confirmPassword"
                   placeholder="Potwierdź hasło"

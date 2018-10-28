@@ -45,7 +45,7 @@ class RequestReset extends Component {
                     skrzynkę e-mail 📬
                   </p>
                 )}
-              <label htmlFor="email">
+              <label>
                 Email
                 <input
                   type="email"
