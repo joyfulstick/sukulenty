@@ -3,6 +3,7 @@ import { CURENT_USER_QUERY } from './User'
 import Error from './ErrorMessage'
 import Form from './styles/Form'
 import { Mutation } from 'react-apollo'
+import Router from 'next/router'
 import gql from 'graphql-tag'
 
 const SIGNUP_MUTATION = gql`
@@ -39,14 +40,24 @@ class Signup extends Component {
         {(signup, { error, loading }) => (
           <Form
             method="post"
-            onSubmit={async e => {
+            onSubmit={e => {
               e.preventDefault()
-              await signup().catch(err => console.log(err)) // eslint-disable-line
-              this.setState({
-                email: '',
-                name: '',
-                password: '',
-              })
+              signup()
+                .then(val => {
+                  if (val) {
+                    Router.push({
+                      pathname: '/items',
+                    })
+                  }
+                })
+                .catch(err => {
+                  console.log(err) // eslint-disable-line
+                  this.setState({
+                    email: '',
+                    name: '',
+                    password: '',
+                  })
+                })
             }}
           >
             <fieldset disabled={loading} aria-busy={loading}>

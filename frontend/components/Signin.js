@@ -3,6 +3,7 @@ import { CURENT_USER_QUERY } from './User'
 import Error from './ErrorMessage'
 import Form from './styles/Form'
 import { Mutation } from 'react-apollo'
+import Router from 'next/router'
 import gql from 'graphql-tag'
 
 const SIGNIN_MUTATION = gql`
@@ -34,12 +35,22 @@ class Signin extends Component {
         {(signin, { error, loading }) => (
           <Form
             method="post"
-            onSubmit={async e => {
+            onSubmit={e => {
               e.preventDefault()
-              await signin().catch(err => console.log(err)) // eslint-disable-line
-              this.setState({
-                password: '',
-              })
+              signin()
+                .then(val => {
+                  if (val) {
+                    Router.push({
+                      pathname: '/items',
+                    })
+                  }
+                })
+                .catch(err => {
+                  console.log(err) // eslint-disable-line
+                  this.setState({
+                    password: '',
+                  })
+                })
             }}
           >
             <fieldset disabled={loading} aria-busy={loading}>
