@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { CURENT_USER_QUERY } from './User'
+import { CURRENT_USER_QUERY } from './User'
 import Error from './ErrorMessage'
 import Form from './styles/Form'
 import { Mutation } from 'react-apollo'
@@ -50,7 +50,7 @@ class Reset extends Component {
           password,
           confirmPassword,
         }}
-        refetchQueries={[{ query: CURENT_USER_QUERY }]}
+        refetchQueries={[{ query: CURRENT_USER_QUERY }]}
       >
         {(resetPassword, { error, loading }) => (
           <Form

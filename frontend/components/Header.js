@@ -1,3 +1,4 @@
+import Cart from './Cart'
 import Link from 'next/link'
 import Nav from './Nav'
 import Nprogress from 'nprogress'
@@ -64,10 +65,10 @@ const Header = () => (
       <Nav />
     </div>
     <div className="sub-bar">
-      <p>Serach</p>
+      <p>Szukaj</p>
     </div>
     <div>
-      <p>Cart</p>
+      <Cart />
     </div>
   </StyledHeader>
 )

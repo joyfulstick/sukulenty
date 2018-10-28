@@ -32,7 +32,7 @@ const Permissions = () => (
         <Error error={error} />
         {data &&
           data.users && (
-            <article>
+            <section>
               <h2>Zarządzaj uprawnieniami</h2>
               <Table>
                 <thead>
@@ -55,7 +55,7 @@ const Permissions = () => (
                   ))}
                 </tbody>
               </Table>
-            </article>
+            </section>
           )}
       </>
     )}

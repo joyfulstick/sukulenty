@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { CURENT_USER_QUERY } from './User'
+import { CURRENT_USER_QUERY } from './User'
 import Error from './ErrorMessage'
 import Form from './styles/Form'
 import { Mutation } from 'react-apollo'
@@ -30,7 +30,7 @@ class Signin extends Component {
       <Mutation
         mutation={SIGNIN_MUTATION}
         variables={state}
-        refetchQueries={[{ query: CURENT_USER_QUERY }]}
+        refetchQueries={[{ query: CURRENT_USER_QUERY }]}
       >
         {(signin, { error, loading }) => (
           <Form

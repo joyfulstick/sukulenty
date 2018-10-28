@@ -1,4 +1,4 @@
-import { CURENT_USER_QUERY } from './User'
+import { CURRENT_USER_QUERY } from './User'
 import { Mutation } from 'react-apollo'
 import React from 'react'
 import gql from 'graphql-tag'
@@ -13,7 +13,7 @@ const SIGN_OUT_MUTATION = gql`
 const Signout = () => (
   <Mutation
     mutation={SIGN_OUT_MUTATION}
-    refetchQueries={[{ query: CURENT_USER_QUERY }]}
+    refetchQueries={[{ query: CURRENT_USER_QUERY }]}
   >
     {signout => <button onClick={signout}>Wylogowanie</button>}
   </Mutation>

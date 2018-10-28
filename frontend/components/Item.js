@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import AddToCart from './AddToCart'
 import DeleteItem from './DeleteItem'
 import ItemStyles from './styles/ItemStyles'
 import Link from 'next/link'
@@ -39,7 +40,7 @@ class Item extends Component {
           >
             <a>Edytuj 📝</a>
           </Link>
-          <button>🛒 Dodaj do koszyka</button>
+          <AddToCart id={id} />
           <DeleteItem id={id} image={image} page={page}>
             ❎ Usuń przedmiot
           </DeleteItem>
