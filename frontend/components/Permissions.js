@@ -1,8 +1,9 @@
 import Error from './ErrorMessage'
 import { Query } from 'react-apollo'
+import React from 'react'
 import Table from './styles/Table'
+import UserPermissions from './UserPermissions'
 import gql from 'graphql-tag'
-import StickButton from './styles/StickButton'
 
 const posiblePermissions = [
   'ADMIN',
@@ -24,11 +25,11 @@ const ALL_USERS_QUERY = gql`
   }
 `
 
-const Permissions = props => (
+const Permissions = () => (
   <Query query={ALL_USERS_QUERY}>
-    {({ data, loading, error }) => (
+    {payload => (
       <>
-        <Error error={error} />
+        <Error error={payload.error} />
         <article>
           <h2>Zarządzaj uprawnieniami</h2>
           <Table>
@@ -43,8 +44,12 @@ const Permissions = props => (
               </tr>
             </thead>
             <tbody>
-              {data.users.map(user => (
-                <UserPermissions key={user.id} user={user} />
+              {payload.data.users.map(user => (
+                <UserPermissions
+                  key={user.id}
+                  user={user}
+                  posiblePermissions={posiblePermissions}
+                />
               ))}
             </tbody>
           </Table>
@@ -53,29 +58,5 @@ const Permissions = props => (
     )}
   </Query>
 )
-
-class UserPermissions extends React.Component {
-  render() {
-    const {
-      user: { id, name, email },
-    } = this.props
-    return (
-      <tr>
-        <td>{name}</td>
-        <td>{email}</td>
-        {posiblePermissions.map(permission => (
-          <td key={`${id}-permission-${permission}`}>
-            <label htmlFor={`${id}-permission-${permission}`}>
-              <input type="checkbox" />
-            </label>
-          </td>
-        ))}
-        <td>
-          <StickButton>Zmień</StickButton>
-        </td>
-      </tr>
-    )
-  }
-}
 
 export default Permissions
