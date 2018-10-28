@@ -40,7 +40,7 @@ const Permissions = () => (
                 {posiblePermissions.map(permission => (
                   <th key={permission}>{permission}</th>
                 ))}
-                <th>👇</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>

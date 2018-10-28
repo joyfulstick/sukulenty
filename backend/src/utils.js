@@ -14,4 +14,11 @@ function hasPermission(user, permissionsNeeded) {
   }
 }
 
+function isLoggedin(ctx) {
+  if (!ctx.request.userId) {
+    throw new Error('Musisz być zalogowany')
+  }
+}
+
 exports.hasPermission = hasPermission
+exports.isLoggedin = isLoggedin

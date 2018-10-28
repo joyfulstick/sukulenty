@@ -2,7 +2,8 @@ const bcrypt = require('bcryptjs'),
   jwt = require('jsonwebtoken'),
   { randomBytes } = require('crypto'),
   { promisify } = require('util'),
-  { transport, makeEmail } = require('../mail')
+  { transport, makeEmail } = require('../mail'),
+  { hasPermission, isLoggedin } = require('../utils')
 
 function setCookieWithToken(user, ctx) {
   const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET)
@@ -16,9 +17,7 @@ const hourMilliseconds = 3600000
 
 const Mutations = {
   createItem(parent, args, ctx, info) {
-    if (!ctx.request.userId) {
-      throw new Error('Musisz być zalogowany, żeby dodać sukulent')
-    }
+    isLoggedin(ctx)
     return ctx.db.mutation.createItem(
       {
         data: {
@@ -141,6 +140,25 @@ const Mutations = {
     })
     setCookieWithToken(updatedUser, ctx)
     return updatedUser
+  },
+  async updatePermissions(parent, args, ctx, info) {
+    isLoggedin(ctx)
+    const currentUser = await ctx.db.query.user(
+      { where: { id: ctx.request.userId } },
+      info,
+    )
+    hasPermission(currentUser, ['ADMIN', 'PERMISSIONUPDATE'])
+    return ctx.db.mutation.updateUser(
+      {
+        data: {
+          permissions: {
+            set: args.permissions,
+          },
+        },
+        where: { id: args.userId },
+      },
+      info,
+    )
   },
 }
 
