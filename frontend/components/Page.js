@@ -26,7 +26,7 @@ const StyledPage = styled.div`
 `
 const Main = styled.main`
   max-width: ${props => props.theme.maxWidth};
-  margin: 264px auto 0 auto;
+  margin: 152px auto 0 auto;
   padding: 2rem;
   @media (max-width: 700px) {
     padding: 0;

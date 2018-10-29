@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Nav from './Nav'
 import Nprogress from 'nprogress'
 import Router from 'next/router'
+import Search from './Search'
 import styled from 'styled-components'
 
 Router.onRouteChangeStart = () => Nprogress.start()
@@ -16,13 +17,13 @@ const StyledHeader = styled.header`
   width: 100%;
   z-index: 2;
   background: #ffffff;
-  overflow: hidden;
   .bar {
     border-bottom: 10px solid ${props => props.theme.black};
     display: grid;
     grid-template-columns: auto 1fr;
     justify-content: space-between;
     align-items: stretch;
+    overflow: hidden;
     @media (max-width: 1300px) {
       grid-template-columns: 1fr;
       justify-content: center;
@@ -65,7 +66,7 @@ const Header = () => (
       <Nav />
     </div>
     <div className="sub-bar">
-      <p>Szukaj</p>
+      <Search />
     </div>
     <div>
       <Cart />
