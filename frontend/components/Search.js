@@ -7,12 +7,14 @@ import debounce from 'lodash.debounce'
 import gql from 'graphql-tag'
 
 const SEARCH_ITEMS_QUERY = gql`
-  query SEARCH_ITEMS_QUERY($searchTerm: String!) {
+  query SEARCH_ITEMS_QUERY($searchTerm: String!, $searchTermCap: String!) {
     items(
       where: {
         OR: [
           { title_contains: $searchTerm }
+          { title_contains: $searchTermCap }
           { description_contains: $searchTerm }
+          { description_contains: $searchTermCap }
         ]
       }
     ) {
@@ -41,7 +43,10 @@ class Search extends Component {
     this.setState({ loading: true })
     const res = await client.query({
       query: SEARCH_ITEMS_QUERY,
-      variables: { searchTerm: e.target.value },
+      variables: {
+        searchTerm: e.target.value,
+        searchTermCap: e.target.value.replace(/\b\w/g, l => l.toUpperCase()),
+      },
     })
     this.setState({
       items: res.data.items,

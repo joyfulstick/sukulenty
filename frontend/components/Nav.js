@@ -9,8 +9,8 @@ import totalItems from '../lib/calcTotalItems'
 
 const guardedLinks = {
   sell: 'sprzedaj',
-  orders: 'zamowienia',
-  me: 'moje konto',
+  // orders: 'zamowienia',
+  // me: 'moje konto',
 }
 
 const Nav = () => (
@@ -31,7 +31,7 @@ const Nav = () => (
             <Mutation mutation={TOGGLE_CART_MUTATION}>
               {toggleCart => (
                 <button onClick={toggleCart}>
-                  My Cart
+                  koszyk
                   <CartCount count={totalItems(me.cart)} />
                 </button>
               )}
