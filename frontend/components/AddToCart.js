@@ -33,7 +33,7 @@ class AddToCart extends React.Component {
             onClick={() => addToCart(id).catch(err => alert(err.message))}
           >
             🛒 Dodaj
-            {loading && 'e'} do Kkszyka
+            {loading && 'e'} do Koszyka
           </button>
         )}
       </Mutation>
