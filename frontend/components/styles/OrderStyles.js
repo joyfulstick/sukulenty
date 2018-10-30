@@ -6,7 +6,7 @@ const OrderStyles = styled.div`
   border: 1px solid ${props => props.theme.offWhite};
   box-shadow: ${props => props.theme.boxShadow};
   padding: 2rem;
-  border-top: 10px solid red;
+  border-top: 22px solid ${props => props.theme.green};
   & > p {
     display: grid;
     grid-template-columns: 1fr 5fr;
@@ -19,6 +19,9 @@ const OrderStyles = styled.div`
         text-align: right;
       }
     }
+  }
+  .items {
+    padding: 0;
   }
   .order-item {
     border-bottom: 1px solid ${props => props.theme.offWhite};

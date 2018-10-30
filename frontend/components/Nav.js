@@ -9,8 +9,7 @@ import totalItems from '../lib/calcTotalItems'
 
 const guardedLinks = {
   sell: 'sprzedaj',
-  // orders: 'zamowienia',
-  // me: 'moje konto',
+  orders: 'zamowienia',
 }
 
 const Nav = () => (
