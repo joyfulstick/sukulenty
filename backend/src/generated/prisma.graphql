@@ -1,5 +1,5 @@
-# source: https://eu1.prisma.sh/michal-44ed3f/sukulenty/dev
-# timestamp: Sun Oct 28 2018 20:45:15 GMT+0100 (Central European Standard Time)
+# source: https://sukulenty.herokuapp.com/backend/prod
+# timestamp: Tue Oct 30 2018 18:21:54 GMT+0100 (Central European Standard Time)
 
 type AggregateCartItem {
   count: Int!
@@ -21,8 +21,8 @@ type BatchPayload {
 type CartItem implements Node {
   id: ID!
   quantity: Int!
-  item: Item
-  user: User!
+  item(where: ItemWhereInput): Item
+  user(where: UserWhereInput): User!
 }
 
 """A connection to a list of items."""
@@ -118,11 +118,7 @@ input CartItemSubscriptionWhereInput {
 input CartItemUpdateInput {
   quantity: Int
   item: ItemUpdateOneInput
-  user: UserUpdateOneRequiredWithoutCartInput
-}
-
-input CartItemUpdateManyInput {
-  quantity: Int
+  user: UserUpdateOneWithoutCartInput
 }
 
 input CartItemUpdateManyWithoutUserInput {
@@ -236,7 +232,7 @@ type Item implements Node {
   image: String
   largeImage: String
   price: Int!
-  user: User!
+  user(where: UserWhereInput): User!
 }
 
 """A connection to a list of items."""
@@ -345,7 +341,7 @@ input ItemUpdateDataInput {
   image: String
   largeImage: String
   price: Int
-  user: UserUpdateOneRequiredInput
+  user: UserUpdateOneInput
 }
 
 input ItemUpdateInput {
@@ -354,15 +350,7 @@ input ItemUpdateInput {
   image: String
   largeImage: String
   price: Int
-  user: UserUpdateOneRequiredInput
-}
-
-input ItemUpdateManyInput {
-  title: String
-  description: String
-  image: String
-  largeImage: String
-  price: Int
+  user: UserUpdateOneInput
 }
 
 input ItemUpdateOneInput {
@@ -611,6 +599,9 @@ input ItemWhereInput {
   """All values greater than or equal the given value."""
   price_gte: Int
   user: UserWhereInput
+  _MagicalBackRelation_CartItemToItem_every: CartItemWhereInput
+  _MagicalBackRelation_CartItemToItem_some: CartItemWhereInput
+  _MagicalBackRelation_CartItemToItem_none: CartItemWhereInput
 }
 
 input ItemWhereUniqueInput {
@@ -636,9 +627,9 @@ type Mutation {
   upsertCartItem(where: CartItemWhereUniqueInput!, create: CartItemCreateInput!, update: CartItemUpdateInput!): CartItem!
   upsertItem(where: ItemWhereUniqueInput!, create: ItemCreateInput!, update: ItemUpdateInput!): Item!
   upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
-  updateManyCartItems(data: CartItemUpdateManyInput!, where: CartItemWhereInput): BatchPayload!
-  updateManyItems(data: ItemUpdateManyInput!, where: ItemWhereInput): BatchPayload!
-  updateManyUsers(data: UserUpdateManyInput!, where: UserWhereInput): BatchPayload!
+  updateManyCartItems(data: CartItemUpdateInput!, where: CartItemWhereInput): BatchPayload!
+  updateManyItems(data: ItemUpdateInput!, where: ItemWhereInput): BatchPayload!
+  updateManyUsers(data: UserUpdateInput!, where: UserWhereInput): BatchPayload!
   deleteManyCartItems(where: CartItemWhereInput): BatchPayload!
   deleteManyItems(where: ItemWhereInput): BatchPayload!
   deleteManyUsers(where: UserWhereInput): BatchPayload!
@@ -855,25 +846,18 @@ input UserUpdateInput {
   cart: CartItemUpdateManyWithoutUserInput
 }
 
-input UserUpdateManyInput {
-  name: String
-  email: String
-  password: String
-  resetToken: String
-  resetTokenExpiry: Float
-  permissions: UserUpdatepermissionsInput
-}
-
-input UserUpdateOneRequiredInput {
+input UserUpdateOneInput {
   create: UserCreateInput
   connect: UserWhereUniqueInput
+  delete: Boolean
   update: UserUpdateDataInput
   upsert: UserUpsertNestedInput
 }
 
-input UserUpdateOneRequiredWithoutCartInput {
+input UserUpdateOneWithoutCartInput {
   create: UserCreateWithoutCartInput
   connect: UserWhereUniqueInput
+  delete: Boolean
   update: UserUpdateWithoutCartDataInput
   upsert: UserUpsertWithoutCartInput
 }
@@ -1135,6 +1119,9 @@ input UserWhereInput {
   cart_every: CartItemWhereInput
   cart_some: CartItemWhereInput
   cart_none: CartItemWhereInput
+  _MagicalBackRelation_ItemToUser_every: ItemWhereInput
+  _MagicalBackRelation_ItemToUser_some: ItemWhereInput
+  _MagicalBackRelation_ItemToUser_none: ItemWhereInput
 }
 
 input UserWhereUniqueInput {

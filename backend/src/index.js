@@ -24,7 +24,6 @@ server.express.use(async (req, res, next) => {
     '{id permissions email name}',
   )
   req.user = user
-  console.log(user)
   next()
 })
 
@@ -36,6 +35,6 @@ server.start(
     },
   },
   deets => {
-    console.log(`Server is now running on port http:/localhost:${deets.port}`)
+    console.log(`Server is now running on port http://localhost:${deets.port}`)
   },
 )
