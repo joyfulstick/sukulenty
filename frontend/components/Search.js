@@ -12,9 +12,9 @@ const SEARCH_ITEMS_QUERY = gql`
       where: {
         OR: [
           { title_contains: $searchTerm }
-          { title_contains: $searchTermCap }
+          { title_contains: $searchTermCap } # PostgreSQL case insensitive
           { description_contains: $searchTerm }
-          { description_contains: $searchTermCap }
+          { description_contains: $searchTermCap } # PostgreSQL case insensitive
         ]
       }
     ) {
