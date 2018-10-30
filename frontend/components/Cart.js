@@ -1,6 +1,7 @@
 import { Mutation, Query } from 'react-apollo'
 import CartItem from './CartItem'
 import CartStyles from './styles/CartStyles'
+import Checkout from './Checkout'
 import CloseButton from './styles/CloseButton'
 import React from 'react'
 import StickButton from './styles/StickButton'
@@ -54,7 +55,11 @@ const Cart = () => (
           </ul>
           <footer>
             <p>{formatMoney(calcTotalPrice(me.cart))}</p>
-            {me.cart.length && <StickButton>Zapłać</StickButton>}
+            {me.cart.length && (
+              <Checkout>
+                <StickButton>Zapłać</StickButton>
+              </Checkout>
+            )}
           </footer>
         </CartStyles>
       )
