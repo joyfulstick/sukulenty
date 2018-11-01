@@ -31,10 +31,11 @@ const Query = {
       info,
     )
     const ownsOrder = Object.is(order.user.id, ctx.request.userId)
+    console.log(ownsOrder)
     const hasPermissionToSeeOrder = ctx.request.user.permissions.includes(
       'ADMIN',
     )
-    if (!ownsOrder || !hasPermissionToSeeOrder) {
+    if (!ownsOrder && !hasPermissionToSeeOrder) {
       throw new Error('Nie możesz zobaczyć tego zamówienia')
     }
     return order

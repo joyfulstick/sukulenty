@@ -39,7 +39,7 @@ const OrderUl = styled.ul`
 class Orders extends Component {
   render() {
     return (
-      <Query query={USER_ORDERS_QUERY}>
+      <Query query={USER_ORDERS_QUERY} fetchPolicy="cache-and-network">
         {({ data: { orders }, loading, error }) => {
           if (loading) return <p>Wczytywanie...</p>
           if (error) return <Error erorr={error} />

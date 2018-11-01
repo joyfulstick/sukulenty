@@ -57,7 +57,7 @@ const Cart = () => (
             <p>{formatMoney(calcTotalPrice(me.cart))}</p>
             {me.cart.length && (
               <Checkout>
-                <StickButton>Zapłać</StickButton>
+                <StickButton onClick={toggleCart}>Zapłać</StickButton>
               </Checkout>
             )}
           </footer>

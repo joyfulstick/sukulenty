@@ -72,7 +72,7 @@ class Order extends Component {
                     <img src={item.image} alt={item.title} />
                     <section className="item-details">
                       <h2>{item.title}</h2>
-                      <p>Ilość: {item.quantity}</p>
+                      <p>Sztuki: {item.quantity}</p>
                       <p>Cena za szt.: {formatMoney(item.price)}</p>
                       <p>Razem: {formatMoney(item.price * item.quantity)}</p>
                       <p>{item.description}</p>

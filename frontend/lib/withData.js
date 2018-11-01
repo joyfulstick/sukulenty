@@ -1,6 +1,6 @@
+import { endpoint, endpointProd } from '../config'
 import ApolloClient from 'apollo-boost'
 import { LOCAL_STATE_QUERY } from '../components/Cart'
-import { endpoint, endpointProd } from '../config'
 import withApollo from 'next-with-apollo'
 
 function createClient({ headers }) {
