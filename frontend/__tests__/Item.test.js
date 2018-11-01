@@ -3,12 +3,11 @@ import { shallow } from 'enzyme'
 import toJSON from 'enzyme-to-json'
 
 const fakeItem = {
-  id: '1df5f2',
-  title: 'Nazwa',
+  id: 'abc123',
   price: 799,
-  description: 'Opis',
-  image: 'item.jpg',
-  largeImage: 'lgitem.jpg',
+  image: 'sukulent-small.jpg',
+  title: 'Sukulent',
+  description: 'Zielony sukulent',
 }
 
 describe('<Item />', () => {

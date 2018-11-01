@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SingleItem/> Errors with a not found item 1`] = `
+<p
+  data-test="graphql-error"
+>
+  <strong>
+    Ups... 
+  </strong>
+  Nie znaleziono 🌵!
+</p>
+`;
+
+exports[`<SingleItem/> renders with proper data 1`] = `
+<h2>
+  Sukulent
+</h2>
+`;
+
+exports[`<SingleItem/> renders with proper data 2`] = `
+<img
+  alt="Sukulent"
+  src="sukulent.jpg"
+/>
+`;
+
+exports[`<SingleItem/> renders with proper data 3`] = `
+<p>
+  Zielony sukulent
+</p>
+`;

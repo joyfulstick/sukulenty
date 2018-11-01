@@ -7,26 +7,26 @@ exports[`<Item /> matches the snapshot 1`] = `
       Object {
         "pathname": "/item",
         "query": Object {
-          "id": "1df5f2",
+          "id": "abc123",
         },
       }
     }
   >
     <a>
       <img
-        alt="Nazwa"
-        src="item.jpg"
+        alt="Sukulent"
+        src="sukulent-small.jpg"
       />
       <Title>
         <h3>
-          Nazwa
+          Sukulent
         </h3>
       </Title>
       <PriceTag>
         7,99 zł
       </PriceTag>
       <p>
-        Opis
+        Zielony sukulent
       </p>
     </a>
   </Link>
@@ -38,7 +38,7 @@ exports[`<Item /> matches the snapshot 1`] = `
         Object {
           "pathname": "/update",
           "query": Object {
-            "id": "1df5f2",
+            "id": "abc123",
           },
         }
       }
@@ -48,11 +48,11 @@ exports[`<Item /> matches the snapshot 1`] = `
       </a>
     </Link>
     <AddToCart
-      id="1df5f2"
+      id="abc123"
     />
     <DeleteItem
-      id="1df5f2"
-      image="item.jpg"
+      id="abc123"
+      image="sukulent-small.jpg"
       page={1}
     >
       ❎ Usuń przedmiot

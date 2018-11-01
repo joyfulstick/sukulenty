@@ -74,4 +74,4 @@ SingleItem.propTypes = {
   id: PropTypes.string.isRequired,
 }
 
-export default SingleItem
+export { SingleItem as default, SINGLE_ITEM_QUERY }
