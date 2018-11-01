@@ -7,6 +7,7 @@ const Item = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   img {
     width: 100%;
     height: 400px;
@@ -19,6 +20,8 @@ const Item = styled.div`
     flex-grow: 1;
     padding: 0 3rem;
     font-size: 1.5rem;
+    max-height: 11em;
+    overflow: hidden;
   }
   .buttonList {
     width: 100%;

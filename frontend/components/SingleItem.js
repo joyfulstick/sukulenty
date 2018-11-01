@@ -15,8 +15,8 @@ const SingleItemStyles = styled.div`
   grid-auto-flow: column;
   min-height: 360px;
   img {
+    padding-top: 5em;
     width: 100%;
-    height: 100%;
     object-fit: contain;
   }
   .details {
@@ -49,7 +49,7 @@ class SingleItem extends Component {
           if (error) return <Error error={error} />
           if (loading) return <p>Wczytywanie...</p>
           if (!data.item) {
-            return <p>Nie znaleziono przedmiotu dla id ${this.props.id}</p>
+            return <p>Nie znaleziono 🌵 dla id ${this.props.id}</p>
           }
           const { title, description, largeImage } = data.item
           return (
