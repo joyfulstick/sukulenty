@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Item /> matches the snapshot 1`] = `
+<ItemStyles__Item>
+  <Link
+    href={
+      Object {
+        "pathname": "/item",
+        "query": Object {
+          "id": "1df5f2",
+        },
+      }
+    }
+  >
+    <a>
+      <img
+        alt="Nazwa"
+        src="item.jpg"
+      />
+      <Title>
+        <h3>
+          Nazwa
+        </h3>
+      </Title>
+      <PriceTag>
+        7,99 zł
+      </PriceTag>
+      <p>
+        Opis
+      </p>
+    </a>
+  </Link>
+  <div
+    className="buttonList"
+  >
+    <Link
+      href={
+        Object {
+          "pathname": "/update",
+          "query": Object {
+            "id": "1df5f2",
+          },
+        }
+      }
+    >
+      <a>
+        Edytuj 📝
+      </a>
+    </Link>
+    <AddToCart
+      id="1df5f2"
+    />
+    <DeleteItem
+      id="1df5f2"
+      image="item.jpg"
+      page={1}
+    >
+      ❎ Usuń przedmiot
+    </DeleteItem>
+  </div>
+</ItemStyles__Item>
+`;

@@ -1,21 +1,22 @@
-import ItemComponent from '../components/Item'
+import Item from '../components/Item'
 import { shallow } from 'enzyme'
+import toJSON from 'enzyme-to-json'
 
 const fakeItem = {
-  id: 'a1',
-  title: 'Title',
+  id: '1df5f2',
+  title: 'Nazwa',
   price: 799,
-  description: 'Item description',
+  description: 'Opis',
   image: 'item.jpg',
   largeImage: 'lgitem.jpg',
 }
 
 describe('<Item />', () => {
-  it('renders and displays properly', () => {
-    const wrapper = shallow(<ItemComponent item={fakeItem} />)
-    const PriceTag = wrapper.find('PriceTag')
-    console.log(wrapper.debug())
-    // expect(PriceTag.children().text()).toBe('7,99 zł')
-    expect(wrapper.find('Title h3').text()).toBe('Title')
+  it('renders', () => {
+    shallow(<Item item={fakeItem} page={1} />)
+  })
+  it('matches the snapshot', () => {
+    const wrapper = shallow(<Item item={fakeItem} page={1} />)
+    expect(toJSON(wrapper)).toMatchSnapshot()
   })
 })
