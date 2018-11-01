@@ -28,9 +28,9 @@ class Item extends Component {
               <h3>{title}</h3>
             </Title>
             <PriceTag>{formatMoney(price)}</PriceTag>
+            <p>{description}</p>
           </a>
         </Link>
-        <p>{description}</p>
         <div className="buttonList">
           <Link
             href={{
