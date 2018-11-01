@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1541112980030" clover="3.2.0">
+  <project timestamp="1541112980030" name="All files">
+    <metrics statements="212" coveredstatements="111" conditionals="66" coveredconditionals="23" methods="100" coveredmethods="33" elements="378" coveredelements="167" complexity="0" loc="212" ncloc="212" packages="4" files="36" classes="36">
+      <package name="frontend">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="cloudinaryEnv.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/cloudinaryEnv.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="2" count="1" type="stmt"/>
+        </file>
+        <file name="config.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/config.js">
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+        </file>
+        <file name="jest.setup.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/jest.setup.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="4" count="6" type="stmt"/>
+        </file>
+      </package>
+      <package name="frontend.components">
+        <metrics statements="144" coveredstatements="71" conditionals="50" coveredconditionals="21" methods="61" coveredmethods="20"/>
+        <file name="AddToCart.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/AddToCart.js">
+          <metrics statements="5" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="22" count="0" type="stmt"/>
+          <line num="31" count="0" type="stmt"/>
+          <line num="33" count="0" type="stmt"/>
+        </file>
+        <file name="Cart.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/Cart.js">
+          <metrics statements="12" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="0"/>
+          <line num="16" count="1" type="stmt"/>
+          <line num="22" count="1" type="stmt"/>
+          <line num="28" count="1" type="stmt"/>
+          <line num="29" count="0" type="stmt"/>
+          <line num="31" count="0" type="stmt"/>
+          <line num="33" count="0" type="stmt"/>
+          <line num="37" count="1" type="stmt"/>
+          <line num="38" count="0" type="stmt"/>
+          <line num="40" count="0" type="stmt"/>
+          <line num="41" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="42" count="0" type="stmt"/>
+          <line num="53" count="0" type="stmt"/>
+        </file>
+        <file name="CartCount.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/CartCount.js">
+          <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="6" count="2" type="stmt"/>
+          <line num="30" count="2" type="stmt"/>
+          <line num="31" count="2" type="stmt"/>
+          <line num="43" count="2" type="stmt"/>
+          <line num="44" count="6" type="stmt"/>
+          <line num="59" count="2" type="stmt"/>
+        </file>
+        <file name="CartItem.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/CartItem.js">
+          <metrics statements="7" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="22" count="1" type="stmt"/>
+          <line num="23" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="24" count="0" type="stmt"/>
+          <line num="30" count="0" type="stmt"/>
+          <line num="48" count="1" type="stmt"/>
+        </file>
+        <file name="Checkout.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/Checkout.js">
+          <metrics statements="10" coveredstatements="1" conditionals="5" coveredconditionals="0" methods="6" coveredmethods="0"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="26" count="0" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="34" count="0" type="stmt"/>
+          <line num="40" count="0" type="stmt"/>
+          <line num="43" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="44" count="0" type="stmt"/>
+          <line num="50" count="0" type="stmt"/>
+          <line num="61" count="0" type="stmt"/>
+        </file>
+        <file name="DeleteItem.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/DeleteItem.js">
+          <metrics statements="15" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
+          <line num="15" count="1" type="stmt"/>
+          <line num="25" count="0" type="stmt"/>
+          <line num="26" count="0" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="28" count="0" type="stmt"/>
+          <line num="29" count="0" type="stmt"/>
+          <line num="30" count="0" type="stmt"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="41" count="0" type="stmt"/>
+          <line num="42" count="0" type="stmt"/>
+          <line num="57" count="0" type="stmt"/>
+          <line num="59" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="60" count="0" type="stmt"/>
+          <line num="61" count="0" type="stmt"/>
+          <line num="73" count="1" type="stmt"/>
+        </file>
+        <file name="ErrorMessage.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/ErrorMessage.js">
+          <metrics statements="10" coveredstatements="8" conditionals="9" coveredconditionals="6" methods="3" coveredmethods="2"/>
+          <line num="5" count="3" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="20" count="3" type="stmt"/>
+          <line num="21" count="2" type="cond" truecount="4" falsecount="0"/>
+          <line num="22" count="1" type="cond" truecount="1" falsecount="1"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="28" count="0" type="stmt"/>
+          <line num="36" count="1" type="stmt"/>
+          <line num="46" count="3" type="stmt"/>
+          <line num="50" count="3" type="stmt"/>
+        </file>
+        <file name="Guard.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/Guard.js">
+          <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+          <line num="5" count="1" type="stmt"/>
+          <line num="6" count="2" type="stmt"/>
+          <line num="8" count="4" type="cond" truecount="2" falsecount="0"/>
+          <line num="9" count="2" type="cond" truecount="2" falsecount="0"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="17" count="1" type="stmt"/>
+        </file>
+        <file name="Item.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/Item.js">
+          <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+          <line num="16" count="2" type="stmt"/>
+          <line num="17" count="2" type="stmt"/>
+          <line num="53" count="1" type="stmt"/>
+        </file>
+        <file name="Items.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/Items.js">
+          <metrics statements="11" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="23" count="1" type="stmt"/>
+          <line num="26" count="1" type="stmt"/>
+          <line num="30" count="0" type="stmt"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="37" count="0" type="stmt"/>
+          <line num="48" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="49" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="50" count="0" type="stmt"/>
+          <line num="53" count="0" type="stmt"/>
+          <line num="67" count="1" type="stmt"/>
+        </file>
+        <file name="Nav.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/Nav.js">
+          <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="15" count="1" type="stmt"/>
+          <line num="16" count="3" type="stmt"/>
+          <line num="18" count="6" type="stmt"/>
+          <line num="25" count="4" type="stmt"/>
+          <line num="32" count="2" type="stmt"/>
+        </file>
+        <file name="Pagination.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/Pagination.js">
+          <metrics statements="11" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="23" count="0" type="stmt"/>
+          <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="28" count="0" type="stmt"/>
+          <line num="29" count="0" type="stmt"/>
+          <line num="30" count="0" type="stmt"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="33" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="34" count="0" type="stmt"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="72" count="1" type="stmt"/>
+        </file>
+        <file name="RemoveFromCart.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/RemoveFromCart.js">
+          <metrics statements="11" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="0"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="16" count="1" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="33" count="0" type="stmt"/>
+          <line num="34" count="0" type="stmt"/>
+          <line num="35" count="0" type="stmt"/>
+          <line num="41" count="0" type="stmt"/>
+          <line num="42" count="0" type="stmt"/>
+          <line num="56" count="0" type="stmt"/>
+          <line num="59" count="0" type="stmt"/>
+        </file>
+        <file name="Signin.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/Signin.js">
+          <metrics statements="11" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="6" coveredmethods="2"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="25" count="0" type="stmt"/>
+          <line num="28" count="1" type="stmt"/>
+          <line num="29" count="1" type="stmt"/>
+          <line num="36" count="1" type="stmt"/>
+          <line num="39" count="0" type="stmt"/>
+          <line num="40" count="0" type="stmt"/>
+          <line num="42" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="43" count="0" type="stmt"/>
+          <line num="49" count="0" type="stmt"/>
+          <line num="50" count="0" type="stmt"/>
+        </file>
+        <file name="Signout.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/Signout.js">
+          <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="13" count="1" type="stmt"/>
+          <line num="14" count="2" type="stmt"/>
+          <line num="18" count="2" type="stmt"/>
+        </file>
+        <file name="SingleItem.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/SingleItem.js">
+          <metrics statements="11" coveredstatements="10" conditionals="6" coveredconditionals="5" methods="3" coveredmethods="3"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="28" count="1" type="stmt"/>
+          <line num="41" count="2" type="stmt"/>
+          <line num="49" count="4" type="cond" truecount="2" falsecount="0"/>
+          <line num="50" count="3" type="cond" truecount="2" falsecount="0"/>
+          <line num="51" count="1" type="cond" truecount="1" falsecount="1"/>
+          <line num="52" count="0" type="stmt"/>
+          <line num="54" count="1" type="stmt"/>
+          <line num="55" count="1" type="stmt"/>
+          <line num="73" count="1" type="stmt"/>
+        </file>
+        <file name="User.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/User.js">
+          <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="5" count="3" type="stmt"/>
+          <line num="25" count="3" type="stmt"/>
+          <line num="26" count="3" type="stmt"/>
+          <line num="27" count="6" type="stmt"/>
+          <line num="31" count="3" type="stmt"/>
+        </file>
+      </package>
+      <package name="frontend.components.styles">
+        <metrics statements="31" coveredstatements="18" conditionals="2" coveredconditionals="0" methods="20" coveredmethods="7"/>
+        <file name="CartStyles.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/styles/CartStyles.js">
+          <metrics statements="4" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="22" count="0" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+        </file>
+        <file name="CloseButton.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/styles/CloseButton.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="3" count="1" type="stmt"/>
+        </file>
+        <file name="Form.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/styles/Form.js">
+          <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="13" count="1" type="stmt"/>
+          <line num="34" count="1" type="stmt"/>
+          <line num="40" count="1" type="stmt"/>
+          <line num="62" count="1" type="stmt"/>
+        </file>
+        <file name="ItemStyles.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/styles/ItemStyles.js">
+          <metrics statements="5" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="33" count="0" type="stmt"/>
+        </file>
+        <file name="NavStyles.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/styles/NavStyles.js">
+          <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="21" count="6" type="stmt"/>
+          <line num="30" count="6" type="stmt"/>
+          <line num="40" count="6" type="stmt"/>
+          <line num="59" count="6" type="stmt"/>
+        </file>
+        <file name="PaginationStyles.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/styles/PaginationStyles.js">
+          <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+        </file>
+        <file name="PriceTag.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/styles/PriceTag.js">
+          <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+        </file>
+        <file name="StickButton.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/styles/StickButton.js">
+          <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+        </file>
+        <file name="Supreme.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/styles/Supreme.js">
+          <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+        </file>
+        <file name="Title.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/components/styles/Title.js">
+          <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="frontend.lib">
+        <metrics statements="31" coveredstatements="16" conditionals="14" coveredconditionals="2" methods="19" coveredmethods="6"/>
+        <file name="calcTotalItems.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/lib/calcTotalItems.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="2" count="3" type="stmt"/>
+        </file>
+        <file name="calcTotalPrice.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/lib/calcTotalPrice.js">
+          <metrics statements="3" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="4" count="0" type="stmt"/>
+        </file>
+        <file name="cloudinaryUtils.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/lib/cloudinaryUtils.js">
+          <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+          <line num="5" count="1" type="stmt"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="12" count="0" type="stmt"/>
+        </file>
+        <file name="formatMoney.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/lib/formatMoney.js">
+          <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+          <line num="3" count="5" type="stmt"/>
+          <line num="4" count="5" type="stmt"/>
+          <line num="5" count="5" type="stmt"/>
+          <line num="10" count="5" type="cond" truecount="2" falsecount="0"/>
+          <line num="11" count="5" type="stmt"/>
+          <line num="12" count="5" type="stmt"/>
+        </file>
+        <file name="polishPurals.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/lib/polishPurals.js">
+          <metrics statements="6" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="2" coveredmethods="0"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="5" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="12" count="0" type="stmt"/>
+        </file>
+        <file name="testUtils.js" path="/home/joyfulstick/Dokumenty/sukulenty/frontend/lib/testUtils.js">
+          <metrics statements="11" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="10" coveredmethods="3"/>
+          <line num="3" count="3" type="stmt"/>
+          <line num="5" count="4" type="stmt"/>
+          <line num="16" count="6" type="stmt"/>
+          <line num="26" count="3" type="stmt"/>
+          <line num="36" count="3" type="stmt"/>
+          <line num="46" count="3" type="stmt"/>
+          <line num="57" count="0" type="stmt"/>
+          <line num="61" count="0" type="stmt"/>
+          <line num="65" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="69" count="0" type="stmt"/>
+          <line num="73" count="0" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>
