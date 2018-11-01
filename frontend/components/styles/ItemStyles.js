@@ -20,7 +20,7 @@ const Item = styled.div`
     flex-grow: 1;
     padding: 0 3rem;
     font-size: 1.5rem;
-    max-height: 11em;
+    max-height: 12em;
     overflow: hidden;
   }
   .buttonList {

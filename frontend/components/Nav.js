@@ -15,7 +15,7 @@ const guardedLinks = {
 const Nav = () => (
   <User>
     {({ data: { me } }) => (
-      <NavStyles>
+      <NavStyles data-test="nav">
         <Link prefetch key="items" href={'/items'}>
           <a>sklep</a>
         </Link>

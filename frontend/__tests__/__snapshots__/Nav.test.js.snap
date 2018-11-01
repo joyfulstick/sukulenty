@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Nav/> renders a minimal nav when signed out 1`] = `
+<nav
+  className="NavStyles-sc-1u9da2z-0 exiQIZ"
+  data-test="nav"
+>
+  <Link
+    href="/items"
+    key="items"
+    prefetch={true}
+  >
+    <a
+      href="/items"
+      onClick={[Function]}
+    >
+      sklep
+    </a>
+  </Link>
+  <Link
+    href="/signup"
+    key="signup"
+  >
+    <a
+      href="/signup"
+      onClick={[Function]}
+    >
+      logowanie
+    </a>
+  </Link>
+</nav>
+`;
+
+exports[`<Nav/> renders the amount of items in the cart 1`] = `
+<div
+  className="count CartCount__Dot-sc-1it1tyt-1 dTHCrd"
+>
+  9
+</div>
+`;
