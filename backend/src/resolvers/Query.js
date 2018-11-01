@@ -31,7 +31,6 @@ const Query = {
       info,
     )
     const ownsOrder = Object.is(order.user.id, ctx.request.userId)
-    console.log(ownsOrder)
     const hasPermissionToSeeOrder = ctx.request.user.permissions.includes(
       'ADMIN',
     )

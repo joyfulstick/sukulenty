@@ -125,7 +125,6 @@ const Mutations = {
     info,
   ) {
     if (password !== confirmPassword) {
-      console.log(password, confirmPassword)
       throw new Error('Hasła nie są takie same!')
     }
     const [user] = await ctx.db.query.users({
