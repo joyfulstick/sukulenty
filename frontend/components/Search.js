@@ -26,6 +26,7 @@ const SEARCH_ITEMS_QUERY = gql`
 `
 
 function routeToItem(item) {
+  if (!item) return
   Router.push({
     pathname: '/item',
     query: {
@@ -68,6 +69,7 @@ class Search extends Component {
             isOpen,
             inputValue,
             highlightedIndex,
+            clearSelection,
           }) => (
             <div>
               <ApolloConsumer>
@@ -81,6 +83,9 @@ class Search extends Component {
                       onChange: e => {
                         e.persist()
                         onChange(e, client)
+                        if (e.target.value === '') {
+                          clearSelection()
+                        }
                       },
                     })}
                   />
