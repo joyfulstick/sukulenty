@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs'),
   { randomBytes } = require('crypto'),
   { promisify } = require('util'),
   { transport, makeEmail } = require('../mail'),
-  { hasPermission, isLoggedin } = require('../utils'),
+  { hasPermission, isLoggedin, ownsItem } = require('../utils'),
   stripe = require('../stripe')
 
 function setCookieWithToken(user, ctx) {
@@ -34,25 +34,17 @@ const Mutations = {
     )
   },
 
-  updateItem(parent, args, ctx, info) {
+  async updateItem(parent, args, ctx, info) {
+    const where = { id: args.id }
+    await ownsItem(where, ctx, ['ADMIN', 'ITEMUPDATE'])
     const updates = { ...args }
     delete updates.id
-    return ctx.db.mutation.updateItem(
-      { data: updates, where: { id: args.id } },
-      info,
-    )
+    return ctx.db.mutation.updateItem({ data: updates, where }, info)
   },
 
   async deleteItem(parent, args, ctx, info) {
     const where = { id: args.id }
-    const item = await ctx.db.query.item({ where }, '{id title user { id }}')
-    const ownsItem = Object.is(item.user.id, ctx.request.userId)
-    const hasPermission = ctx.request.user.permissions.some(permision =>
-      ['ADMIN', 'ITEMDELETE'].includes(permision),
-    )
-    if (!ownsItem && !hasPermission) {
-      throw new Error('Nie masz uprawnień!')
-    }
+    await ownsItem(where, ctx, ['ADMIN', 'ITEMDELETE'])
     return ctx.db.mutation.deleteItem({ where }, info)
   },
 

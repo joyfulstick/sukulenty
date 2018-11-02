@@ -20,5 +20,17 @@ function isLoggedin(ctx) {
   }
 }
 
+async function ownsItem(where, ctx, permits = ['ADMIN']) {
+  const item = await ctx.db.query.item({ where }, '{id title user { id }}')
+  const ownsItem = Object.is(item.user.id, ctx.request.userId)
+  const hasPermission = ctx.request.user.permissions.some(permision =>
+    permits.includes(permision),
+  )
+  if (!ownsItem && !hasPermission) {
+    throw new Error('Nie masz uprawnień!')
+  }
+}
+
 exports.hasPermission = hasPermission
 exports.isLoggedin = isLoggedin
+exports.ownsItem = ownsItem
