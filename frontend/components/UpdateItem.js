@@ -62,7 +62,8 @@ class UpdateItem extends Component {
       .then(val => {
         if (val) {
           Router.push({
-            pathname: '/items',
+            pathname: '/item',
+            query: { id },
           })
         }
       })
