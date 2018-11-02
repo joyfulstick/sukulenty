@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Error from './ErrorMessage'
 import Form from './styles/Form'
 import PropTypes from 'prop-types'
+import Router from 'next/router'
 import gql from 'graphql-tag'
 
 const SINGLE_ITEM_QUERY = gql`
@@ -52,13 +53,22 @@ class UpdateItem extends Component {
       props: { id },
       state,
     } = this
-    const res = await updateItem({
+    updateItem({
       variables: {
         id,
         ...state,
       },
     })
-    console.log(res)
+      .then(val => {
+        if (val) {
+          Router.push({
+            pathname: '/items',
+          })
+        }
+      })
+      .catch(err => {
+        console.log(err) // eslint-disable-line
+      })
   }
 
   render() {
