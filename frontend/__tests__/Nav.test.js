@@ -7,8 +7,10 @@ import { mount } from 'enzyme'
 import toJSON from 'enzyme-to-json'
 import wait from 'waait'
 
-const routerMocks = { push: () => {}, prefetch: () => {} }
-Router.router = routerMocks
+Router.router = {
+  push() {},
+  prefetch() {},
+}
 
 const notSignedInMocks = [
   {

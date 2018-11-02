@@ -34,7 +34,7 @@ class Pagination extends Component {
           const counter = `Strona ${page}${nbsp}z${nbsp}${pages}`
 
           return (
-            <PaginationStyles>
+            <PaginationStyles data-test="pagination">
               <Head>
                 <title>Sukulenty! - {counter} </title>
               </Head>
@@ -45,9 +45,11 @@ class Pagination extends Component {
                   query: { page: page - 1 },
                 }}
               >
-                <a aria-disabled={page <= 1}>⬅️ Poprzednia</a>
+                <a aria-disabled={page <= 1} data-test="prev">
+                  ⬅️ Poprzednia
+                </a>
               </Link>
-              <p>{counter}</p>
+              <p data-test="total-pages">{counter}</p>
               <p>
                 <span>{count} </span>
                 {polishPlural('sukulent', 'sukulenty', 'sukulentów')(count)}
@@ -59,7 +61,9 @@ class Pagination extends Component {
                   query: { page: page + 1 },
                 }}
               >
-                <a aria-disabled={page >= pages}>Następna ➡️</a>
+                <a aria-disabled={page >= pages} data-test="next">
+                  Następna ➡️
+                </a>
               </Link>
             </PaginationStyles>
           )

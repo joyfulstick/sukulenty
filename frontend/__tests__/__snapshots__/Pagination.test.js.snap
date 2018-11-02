@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Pagination/> renders pagination for 44 items 1`] = `
+<div
+  className="PaginationStyles-d94h6q-0 cXPzjF"
+  data-test="pagination"
+>
+  <SideEffect(Head)>
+    <Head />
+  </SideEffect(Head)>
+  <Link
+    href={
+      Object {
+        "pathname": "/items",
+        "query": Object {
+          "page": 0,
+        },
+      }
+    }
+    prefetch={true}
+  >
+    <a
+      aria-disabled={true}
+      data-test="prev"
+      href="/items?page=0"
+      onClick={[Function]}
+    >
+      ⬅️ Poprzednia
+    </a>
+  </Link>
+  <p
+    data-test="total-pages"
+  >
+    Strona 1 z 3
+  </p>
+  <p>
+    <span>
+      44
+       
+    </span>
+    sukulenty
+  </p>
+  <Link
+    href={
+      Object {
+        "pathname": "/items",
+        "query": Object {
+          "page": 2,
+        },
+      }
+    }
+    prefetch={true}
+  >
+    <a
+      aria-disabled={false}
+      data-test="next"
+      href="/items?page=2"
+      onClick={[Function]}
+    >
+      Następna ➡️
+    </a>
+  </Link>
+</div>
+`;
