@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CreateItem/> renders and matches snapshot 1`] = `
+<form
+  className="Form-t0rxhl-0 lpjQDY"
+  data-test="form"
+  onSubmit={[Function]}
+>
+  <DisplayError
+    error={Object {}}
+  />
+  <fieldset
+    aria-busy={false}
+    disabled={false}
+  >
+    <label
+      htmlFor="file"
+    >
+      Zdjęcie
+      <input
+        id="file"
+        name="file"
+        onChange={[Function]}
+        placeholder="Dodaj zdjęcie"
+        required={true}
+        type="file"
+      />
+    </label>
+    <label
+      htmlFor="title"
+    >
+      Nazwa
+      <input
+        id="title"
+        name="title"
+        onChange={[Function]}
+        placeholder="Nazwa"
+        required={true}
+        type="text"
+        value=""
+      />
+    </label>
+    <label
+      htmlFor="price"
+    >
+      Cena
+      <input
+        id="price"
+        min="0"
+        name="price"
+        onChange={[Function]}
+        placeholder="Cena"
+        required={true}
+        type="number"
+        value={0}
+      />
+    </label>
+    <label
+      htmlFor="description"
+    >
+      Dodaj opis
+      <textarea
+        id="description"
+        name="description"
+        onChange={[Function]}
+        placeholder="Dodaj opis"
+        required={true}
+        value=""
+      />
+    </label>
+    <button
+      disabled={true}
+      type="submit"
+    >
+      Dodaj
+    </button>
+  </fieldset>
+</form>
+`;

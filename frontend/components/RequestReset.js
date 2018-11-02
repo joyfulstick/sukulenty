@@ -33,6 +33,7 @@ class RequestReset extends Component {
                 email: '',
               })
             }}
+            data-test="form"
           >
             <fieldset disabled={loading} aria-busy={loading}>
               <h2>Resetowanie hasła</h2>
@@ -65,4 +66,4 @@ class RequestReset extends Component {
   }
 }
 
-export default RequestReset
+export { RequestReset as default, REQUEST_RESET_MUTATION }
