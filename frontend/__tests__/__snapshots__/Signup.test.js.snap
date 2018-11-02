@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Signup/> renders and matches snapshot 1`] = `
+<form
+  className="Form-t0rxhl-0 lpjQDY"
+  method="post"
+  onSubmit={[Function]}
+>
+  <fieldset
+    aria-busy={false}
+    disabled={false}
+  >
+    <h2>
+      Rejestracja
+    </h2>
+    <DisplayError
+      error={Object {}}
+    />
+    <label>
+      Email
+      <input
+        name="email"
+        onChange={[Function]}
+        placeholder="e-mail"
+        required={true}
+        type="email"
+        value=""
+      />
+    </label>
+    <label>
+      Imię
+      <input
+        name="name"
+        onChange={[Function]}
+        placeholder="Imię"
+        required={true}
+        type="text"
+        value=""
+      />
+    </label>
+    <label>
+      Hasło
+      <input
+        name="password"
+        onChange={[Function]}
+        placeholder="Hasło"
+        required={true}
+        type="password"
+        value=""
+      />
+    </label>
+    <button
+      type="submit"
+    >
+      Zapisz się
+    </button>
+  </fieldset>
+</form>
+`;

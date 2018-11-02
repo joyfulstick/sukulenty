@@ -105,4 +105,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup
+export { Signup as default, SIGNUP_MUTATION }
