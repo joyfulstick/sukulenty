@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Order/> renders the order 1`] = `
+<div
+  className="OrderStyles-sc-8hslnp-0 kYIEUX"
+  data-test="order"
+>
+  <SideEffect(Head)>
+    <Head />
+  </SideEffect(Head)>
+  <p>
+    <span>
+      Nr zamówienia:
+    </span>
+    <span>
+      ord123
+    </span>
+  </p>
+  <p>
+    <span>
+      Nr płatności:
+    </span>
+    <span>
+      ch_123
+    </span>
+  </p>
+  <p>
+    <span>
+      Data:
+    </span>
+    <span>
+      1.11.2018 1:00
+    </span>
+  </p>
+  <p>
+    <span>
+      Suma:
+    </span>
+    <span>
+      400 zł
+    </span>
+  </p>
+  <p>
+    <span>
+      Ilość 🌵
+    </span>
+    <span>
+      2
+    </span>
+  </p>
+  <ul
+    className="items"
+  >
+    <li
+      className="order-item"
+      key="3a430a73-c9e9-4bcc-b46a-41618965ffea"
+    >
+      <img
+        alt="soluta non omnis consequatur enim quia autem"
+        src="reprehenderit.jpg"
+      />
+      <section
+        className="item-details"
+      >
+        <h2>
+          soluta non omnis consequatur enim quia autem
+        </h2>
+        <p>
+          Sztuki: 
+          1
+        </p>
+        <p>
+          Cena za szt.: 
+          42,34 zł
+        </p>
+        <p>
+          Razem: 
+          42,34 zł
+        </p>
+        <p>
+          et modi tenetur amet modi reprehenderit omnis
+        </p>
+      </section>
+    </li>
+    <li
+      className="order-item"
+      key="2393e090-592f-4d03-b808-c9d81098deec"
+    >
+      <img
+        alt="quia sed exercitationem omnis laborum exercitationem est"
+        src="sint.jpg"
+      />
+      <section
+        className="item-details"
+      >
+        <h2>
+          quia sed exercitationem omnis laborum exercitationem est
+        </h2>
+        <p>
+          Sztuki: 
+          1
+        </p>
+        <p>
+          Cena za szt.: 
+          42,34 zł
+        </p>
+        <p>
+          Razem: 
+          42,34 zł
+        </p>
+        <p>
+          sapiente laudantium molestias assumenda quasi adipisci mollitia
+        </p>
+      </section>
+    </li>
+  </ul>
+</div>
+`;
