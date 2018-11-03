@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Cart/> renders and matches snapshot 1`] = `
+<header>
+  <CloseButton
+    onClick={[Function]}
+    title="close"
+  >
+    <button
+      className="CloseButton-siwfb9-0 fYYNjH"
+      onClick={[Function]}
+      title="close"
+    >
+      ×
+    </button>
+  </CloseButton>
+  <Supreme>
+    <h3
+      className="Supreme-sc-89stpv-0 iLJLfO"
+    >
+      Miss Coleman Berge
+    </h3>
+  </Supreme>
+  <p>
+    Masz 
+    6
+     🌵 w koszyku
+  </p>
+</header>
+`;

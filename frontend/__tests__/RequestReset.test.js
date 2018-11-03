@@ -39,7 +39,7 @@ describe('<RequestReset/>', () => {
       target: { name: 'email', value: 'test@test.pl' },
     })
     wrapper.find('form').simulate('submit')
-    await wait()
+    await wait(50)
     wrapper.update()
     expect(wrapper.find('p').text()).toContain(
       'Wiadomość z linkiem do resetu hasła została wysłana. Sprawdź skrzynkę e-mail 📬',
