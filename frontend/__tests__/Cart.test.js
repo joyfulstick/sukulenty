@@ -13,7 +13,7 @@ const mocks = [
       data: {
         me: {
           ...fakeUser(),
-          cart: [fakeCartItem(), fakeCartItem()],
+          cart: [fakeCartItem(), fakeCartItem({ id: 'ast345' })],
         },
       },
     },
