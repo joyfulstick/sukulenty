@@ -31,6 +31,10 @@ const OrderStyles = styled.div`
     grid-gap: 2rem;
     margin: 2rem 0;
     padding-bottom: 2rem;
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 300px auto;
+    }
     img {
       width: 100%;
       height: 100%;

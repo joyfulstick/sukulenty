@@ -33,7 +33,8 @@ const USER_ORDERS_QUERY = gql`
 const OrderUl = styled.ul`
   display: grid;
   grid-gap: 4rem;
-  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  padding: 0;
 `
 
 class Orders extends Component {

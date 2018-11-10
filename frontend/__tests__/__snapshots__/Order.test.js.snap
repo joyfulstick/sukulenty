@@ -2,7 +2,7 @@
 
 exports[`<Order/> renders the order 1`] = `
 <div
-  className="OrderStyles-sc-8hslnp-0 kYIEUX"
+  className="OrderStyles-sc-8hslnp-0 jxLGqP"
   data-test="order"
 >
   <SideEffect(Head)>
