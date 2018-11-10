@@ -21,8 +21,8 @@ const NavStyles = styled.nav`
     color: ${props => props.theme.black};
     cursor: pointer;
     @media (max-width: 700px) {
-      font-size: 10px;
-      padding: 0 10px;
+      font-size: 9px;
+      padding: 0 9px;
     }
     &::before {
       content: '';

@@ -14,6 +14,9 @@ const PaginationStyles = styled.div`
     margin: 0;
     padding: 15px 30px;
     border-right: 1px solid ${props => props.theme.lightgrey};
+    @media (max-width: 700px) {
+      padding: 5px 10px;
+    }
     &:last-child {
       border-right: 0;
     }
