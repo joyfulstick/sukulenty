@@ -36,7 +36,7 @@ class Pagination extends Component {
           return (
             <PaginationStyles data-test="pagination">
               <Head>
-                <title>Sukulenty! - {counter} </title>
+                <title>Sukulenty - {counter} </title>
               </Head>
               <Link
                 prefetch

@@ -14,6 +14,9 @@ const SingleItemStyles = styled.div`
   grid-auto-columns: 1fr;
   grid-auto-flow: column;
   min-height: 360px;
+  @media (max-width: 700px) {
+    grid-auto-flow: row;
+  }
   img {
     padding-top: 5em;
     width: 100%;
@@ -55,7 +58,7 @@ class SingleItem extends Component {
           return (
             <SingleItemStyles>
               <Head>
-                <title>Sukulenty! | {title}</title>
+                <title>Sukulenty | {title}</title>
               </Head>
               <img src={largeImage} alt={title} />
               <article className="details">
